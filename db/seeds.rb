@@ -22,8 +22,18 @@ Post.create(
 )
 
 Post.create(
-  title: "Post 1",
+  title: "Post 3",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla mollis lectus sit amet hendrerit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent lobortis quam sem, at pellentesque justo commodo vitae. Suspendisse augue diam, efficitur malesuada commodo non, hendrerit ac justo. Integer a tempus nisi. Nullam sit amet massa sem. Duis mollis ipsum et erat viverra tincidunt. Pellentesque egestas arcu sed metus aliquet feugiat. Fusce elementum vehicula purus, sit amet laoreet mauris lobortis sed. Nulla magna urna, accumsan dapibus ullamcorper ac, blandit eget augue. Interdum et malesuada fames ac ante ipsum primis in faucibus."
 )
 
-puts "Three seed posts created!"
+Post.create(
+  title: "Post 4",
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla mollis lectus sit amet hendrerit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent lobortis quam sem, at pellentesque justo commodo vitae. Suspendisse augue diam, efficitur malesuada commodo non, hendrerit ac justo. Integer a tempus nisi. Nullam sit amet massa sem. Duis mollis ipsum et erat viverra tincidunt. Pellentesque egestas arcu sed metus aliquet feugiat. Fusce elementum vehicula purus, sit amet laoreet mauris lobortis sed. Nulla magna urna, accumsan dapibus ullamcorper ac, blandit eget augue. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+)
+
+Post.create(
+  title: "Post 5",
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla mollis lectus sit amet hendrerit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent lobortis quam sem, at pellentesque justo commodo vitae. Suspendisse augue diam, efficitur malesuada commodo non, hendrerit ac justo. Integer a tempus nisi. Nullam sit amet massa sem. Duis mollis ipsum et erat viverra tincidunt. Pellentesque egestas arcu sed metus aliquet feugiat. Fusce elementum vehicula purus, sit amet laoreet mauris lobortis sed. Nulla magna urna, accumsan dapibus ullamcorper ac, blandit eget augue. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+)
+
+puts "Five seed posts created!"
