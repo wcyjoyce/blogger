@@ -1,0 +1,34 @@
+.sidebar {
+  height: calc(100vh - 100px);
+  width: 1250px;
+  top: 100px;
+  position: sticky !important;
+  padding: 15px;
+  color: $dark-gray;
+  text-align: center;
+}
+
+.sidebar-photo {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+}
+
+.sidebar-name h3 {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin: 0px;
+  padding: 10px;
+}
+
+.sidebar-bio {
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.sidebar-links li {
+    padding: 0px 10px;
+}
