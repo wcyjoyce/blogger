@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post)
     else
-      render :enw
+      render :new
     end
   end
 
