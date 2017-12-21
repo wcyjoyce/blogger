@@ -1,0 +1,39 @@
+.posts {
+  padding: 0px 20px;
+}
+
+.post {
+  padding-bottom: 5px;
+
+  h3 {
+    margin: 12.5px 0px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  h6 {
+    font-size: 14px;
+    font-family: "Source Sans Pro", "sans-serif";
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 0px;
+    color: $post;
+  }
+}
+
+.post-links a {
+  font-size: 12px;
+  text-decoration: none;
+  color: $gray;
+
+  &:hover {
+    color: $dark-gray;
+    transition: all 0.3s ease;
+    border: 1px solid $dark-gray;
+  }
+}
