@@ -15,6 +15,13 @@
     color: $dark-gray;
     margin: 0px 0px 25px 0px;
   }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 0px;
+    color: $post;
+    text-align: justify;
+  }
 }
 
 .form-control {
