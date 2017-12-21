@@ -7,6 +7,14 @@
     font-weight: bolder;
     color: $post;
   }
+
+  h2 {
+    font-size: 26px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    color: $dark-gray;
+    margin: 0px 0px 25px 0px;
+  }
 }
 
 .form-control {
@@ -24,4 +32,8 @@
   ::placeholder {
     color: $post;
   }
+}
+
+.post_content {
+
 }
