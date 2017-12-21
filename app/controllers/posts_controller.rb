@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     authorize @post
+    @disable_sidebar = true
   end
 
   def create
@@ -28,6 +29,7 @@ class PostsController < ApplicationController
 
   def edit
     authorize @post
+    @disable_sidebar = true
   end
 
   def destroy
