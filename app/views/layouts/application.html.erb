@@ -14,7 +14,7 @@
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
       <div class="content">
-        <%= render "shared/sidebar" %>
+        <%= render "shared/sidebar" unless @disable_sidebar %>
         <%= yield %>
       </div>
     </div>
