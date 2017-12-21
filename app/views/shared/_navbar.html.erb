@@ -7,10 +7,11 @@
         <li><a href="#">CONTACT</a></li>
         <li><a href="#">ARCHIVE</a></li>
         <li><%= link_to "DASHBOARD", dashboard_path(current_user) %></li>
+        <li><%= link_to "SIGN OUT", root_path %></li>
       <% else %>
         <li><a href="#">CONTACT</a></li>
         <li><a href="#">ARCHIVE</a></li>
-        <li><%= link_to "SIGN UP / LOG IN", new_user_session_path %></li>
+        <li><%= link_to "SIGN UP / SIGN IN", new_user_session_path %></li>
       <% end %>
     </ul>
   </div>
@@ -23,11 +24,12 @@
         <% if user_signed_in? %>
           <li><a href="#">CONTACT</a></li>
           <li><a href="#">ARCHIVE</a></li>
-          <li><%= link_to "DASHBOARD", root_path %></li>
+          <li><%= link_to "DASHBOARD", dashboard_path(current_user) %></li>
+          <li><%= link_to "SIGN OUT", root_path %></li>
         <% else %>
           <li><a href="#">CONTACT</a></li>
           <li><a href="#">ARCHIVE</a></li>
-          <li><%= link_to "SIGN UP / LOG IN", new_user_session_path %></li>
+          <li><%= link_to "SIGN UP / SIGN IN", new_user_session_path %></li>
         <% end %>
       </ul>
     </div>
