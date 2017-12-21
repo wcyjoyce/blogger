@@ -1,0 +1,7 @@
+<%= simple_form_for(@post) do |p| %>
+  <%= p.input :title, label: false, placeholder: "TITLE" %>
+  <%= p.input :content, label: false, placeholder: "CONTENT" %>
+  <%= p.input :photo, label: false %>
+  <%= p.input :photo_cache, as: :hidden %>
+  <%= p.submit "Submit", class: "btn" %>
+<% end %>
