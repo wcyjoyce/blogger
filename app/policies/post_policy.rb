@@ -11,11 +11,11 @@ class PostPolicy < ApplicationPolicy
 
   def update?
     # record.user == user
-    # return true
+    return true
   end
 
   def destroy?
     # record.user == user
-    # return true
+    return true
   end
 end

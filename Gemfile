@@ -18,6 +18,11 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
 
+# Photo Uploads
+gem 'figaro'
+gem 'cloudinary', '1.1.7'
+gem 'carrierwave', '~> 1.2'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
