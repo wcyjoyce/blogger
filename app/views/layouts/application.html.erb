@@ -11,12 +11,12 @@
   </head>
   <body>
     <div class="margin">
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-    <div class="content">
-      <%= render "shared/sidebar" %>
-      <%= yield %>
-    </div>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+      <div class="content">
+        <%= render "shared/sidebar" %>
+        <%= yield %>
+      </div>
     </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
