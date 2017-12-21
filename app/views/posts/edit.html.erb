@@ -3,3 +3,5 @@
   <h2><%= @post.title.upcase %></h2>
   <%= render "form", post: @post %>
 </div>
+
+<%= content_for(:title, "Edit Post | " + @post.title.split.map { |p| p.capitalize}.join(" ")) %>
