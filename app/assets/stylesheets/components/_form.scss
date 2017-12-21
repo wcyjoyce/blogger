@@ -1,0 +1,27 @@
+.post-form {
+  width: 100%;
+
+  h1 {
+    font-size: 30px;
+    letter-spacing: 7.5px;
+    font-weight: bolder;
+    color: $post;
+  }
+}
+
+.form-control {
+  font-family: "Lato", "sans-serif";
+  font-size: 14px;
+  color: $post;
+  border: 1px solid $post;
+}
+
+.form-group {
+  font-family: "Lato", "sans-serif";
+  font-size: 14px;
+  color: $post;
+
+  ::placeholder {
+    color: $post;
+  }
+}
