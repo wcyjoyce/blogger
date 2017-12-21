@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    authorize @post
   end
 
   def new
@@ -30,6 +31,15 @@ class PostsController < ApplicationController
   def edit
     authorize @post
     @disable_sidebar = true
+  end
+
+  def update
+    authorize @post
+    if @post.update(post_params)
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
   end
 
   def destroy
