@@ -4,13 +4,11 @@
   <div class="navbar-links hidden-xs hidden-sm">
     <ul class="list-inline">
       <% if user_signed_in? %>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="#">ARCHIVE</a></li>
+        <li><%= link_to "CONTACT", contact_path %></li>
         <li><%= link_to "DASHBOARD", dashboard_path(current_user) %></li>
         <li><%= link_to "SIGN OUT", root_path %></li>
       <% else %>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="#">ARCHIVE</a></li>
+        <li><%= link_to "CONTACT", contact_path %></li>
         <li><%= link_to "SIGN UP / SIGN IN", new_user_session_path %></li>
       <% end %>
     </ul>
@@ -22,13 +20,11 @@
       <i class="fa fa-bars" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
         <% if user_signed_in? %>
-          <li><a href="#">CONTACT</a></li>
-          <li><a href="#">ARCHIVE</a></li>
+          <li><%= link_to "CONTACT", contact_path %></li>
           <li><%= link_to "DASHBOARD", dashboard_path(current_user) %></li>
           <li><%= link_to "SIGN OUT", root_path %></li>
         <% else %>
-          <li><a href="#">CONTACT</a></li>
-          <li><a href="#">ARCHIVE</a></li>
+          <li><%= link_to "CONTACT", contact_path %></li>
           <li><%= link_to "SIGN UP / SIGN IN", new_user_session_path %></li>
         <% end %>
       </ul>
