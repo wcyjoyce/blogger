@@ -1,7 +1,7 @@
 <div class="posts">
   <% if @posts.empty? %>
     <div class="post">
-      <h3>There are no posts yet. <%= link_to "Would you like to write one now?", new_post_path %></h3>
+      <h3><%= link_to "There are no posts yet. Would you like to write one now?", new_post_path %></h3>
     </div>
   <% else %>
     <% @posts.each do |post| %>
