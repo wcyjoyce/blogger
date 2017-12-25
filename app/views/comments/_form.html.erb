@@ -1,0 +1,5 @@
+<%= simple_form_for([ post, comment ]) do |c| %>
+  <%= c.input :name, label: false, placeholder: "NAME" %>
+  <%= c.input :comment, label: false, placeholder: "COMMENT" %>
+  <%= c.submit "Submit", class: "btn" %>
+<% end %>
