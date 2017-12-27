@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
+gem 'pg_search'
 
 # Photo Uploads
 gem 'figaro'
