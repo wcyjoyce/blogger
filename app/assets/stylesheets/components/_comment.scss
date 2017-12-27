@@ -1,3 +1,13 @@
+.comments {
+  h3 {
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    color: $post;
+    text-transform: uppercase;
+  }
+}
+
 .comment {
   margin-bottom: 15px;
 
