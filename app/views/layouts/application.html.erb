@@ -12,10 +12,10 @@
   </head>
   <body>
     <div class="margin">
-      <%= render "shared/navbar" %>
-      <%= render "shared/flashes" %>
+      <%= render "components/navbar" %>
+      <%= render "components/flashes" %>
       <div class="content">
-        <%= render "shared/sidebar" unless @disable_sidebar %>
+        <%= render "components/sidebar" unless @disable_sidebar %>
         <%= yield %>
       </div>
     </div>
