@@ -1,7 +1,7 @@
 <div class="show">
-  <% unless @post.photo.nil? %>
-    <%= cl_image_tag @post.photo, crop: :fill, class: "post-image" %>
-  <% end %>
+  <% image_display = [] %>
+  <% image_display << hidden if @post.photo.nil? %>
+  <%= cl_image_tag @post.photo, crop: :fill, class: "post-image image_display" %>
   <div class="post-text">
     <h1><%= @post.title.upcase %></h1>
     <h6><%= @post.created_at.strftime("%B %e, %Y") %></h6>
