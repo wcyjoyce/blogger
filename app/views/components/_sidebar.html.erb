@@ -17,15 +17,17 @@
 
   <div class="tag-cloud">
     <% cloud = [] %>
-    <% @posts.each do |post| %>
-      <% post.tags.each do |tag| %>
-        <% cloud << tag.name %>
+    <% unless @posts.nil? %>
+      <% @posts.each do |post| %>
+        <% post.tags.each do |tag| %>
+          <% cloud << tag.name %>
+        <% end %>
       <% end %>
+      <% cloud = cloud.sort.uniq %>
+      <div class="post-tags">
+        <%= raw tag_links(cloud.join(", ")) %>
+      </div>
     <% end %>
-    <% cloud = cloud.sort.uniq %>
-    <div class="post-tags">
-      <%= raw tag_links(cloud.join(", ")) %>
-    </div>
   </div>
 
   <div class="sidebar-links">
