@@ -8,7 +8,10 @@
     <p>I am a former investment analyst looking to make a career transition into web development. This blog is for me to practice my coding skills as well as for me to share my thoughts. Views are my own - you can see more via my social media accounts below.</p>
   </div>
   <div class="sidebar-search">
-    <p><i>There will be a search function here.</i></p>
+    <%= form_tag(posts_path, method: :get) do %>
+      <%= text_field_tag :search, nil, placeholder: "SEARCH", class: "search-box" %>
+      <%= submit_tag "Search", class: "btn" %>
+    <% end %>
   </div>
   <div class="sidebar-links">
     <ul class="list-inline">

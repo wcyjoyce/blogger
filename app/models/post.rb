@@ -25,4 +25,21 @@ class Post < ApplicationRecord
   def self.tagged_with(name)
     Tag.find_by_name!(name).posts
   end
+
+  # Search
+  include PgSearch
+
+  pg_search_scope :global_search,
+    against: [:title, :content],
+    using: {
+      tsearch: {prefix: true}
+    }
+
+  def self.perform_search(keyword)
+    if keyword.present?
+      Post.global_search(keyword)
+    else
+      Post.all
+    end
+  end
 end

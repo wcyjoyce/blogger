@@ -8,6 +8,12 @@ class PostsController < ApplicationController
     else
       @posts = policy_scope(Post).order(created_at: :desc)
     end
+
+    if params[:search].present?
+      @posts = Post.perform_search(params[:search])
+    else
+      @posts = Post.all.order(created_at: :desc)
+    end
   end
 
   def show
