@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     if params[:tag]
-      @posts = policy_scope(Post).tagged_with(params[:tag])
+      @posts = policy_scope(Post).tagged_with(params[:tag]).order(created_at: :desc)
     else
       @posts = policy_scope(Post).order(created_at: :desc)
     end
