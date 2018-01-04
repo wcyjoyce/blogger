@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   # Enables photo uploads
   mount_uploader :photo, PhotoUploader
 
-  # Post tags
+  # Creates post tags
   def all_tags=(names)
     self.tags = names.split(",").map do |name|
       Tag.where(name: name.strip).first_or_create!
@@ -35,11 +35,11 @@ class Post < ApplicationRecord
       tsearch: {prefix: true}
     }
 
-  def self.perform_search(keyword)
-    if keyword.present?
-      Post.global_search(keyword)
-    else
-      Post.all
-    end
-  end
+  # def self.perform_search(keyword)
+  #   if keyword.present?
+  #     Post.global_search(keyword)
+  #   else
+  #     Post.all
+  #   end
+  # end
 end
