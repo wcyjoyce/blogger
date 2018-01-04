@@ -1,3 +1,7 @@
+body {
+  background: white;
+}
+
 .margin {
   width: 90%;
   margin: auto;
@@ -8,6 +12,16 @@
   padding: 0px 15px;
 }
 
-body {
-  background: white;
+.container {
+  padding: 0px;
+  width: 100%;
+
+  h1 {
+    font-size: 30px;
+    letter-spacing: 7.5px;
+    font-weight: bolder;
+    color: $post;
+    margin-top: 12.5px;
+    text-transform: uppercase;
+  }
 }

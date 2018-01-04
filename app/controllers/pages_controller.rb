@@ -5,5 +5,6 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @disable_sidebar = true
   end
 end
