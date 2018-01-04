@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @posts = policy_scope(Post).order(created_at: :desc)
+    if params[:tag]
+      @posts = policy_scope(Post).tagged_with(params[:tag])
+    else
+      @posts = policy_scope(Post).order(created_at: :desc)
+    end
   end
 
   def show
@@ -52,7 +56,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :photo)
+    params.require(:post).permit(:title, :content, :photo, :all_tags)
   end
 
   def set_post

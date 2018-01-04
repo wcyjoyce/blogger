@@ -1,6 +1,7 @@
 <%= simple_form_for(@post) do |p| %>
   <%= p.input :title, label: false, placeholder: "TITLE" %>
   <%= p.input :content, input_html: {rows: 10}, label: false, placeholder: "CONTENT" %>
+  <%= p.input :all_tags, label: false, placeholder: "TAGS SEPARATED WITH COMMA" %>
   <%= p.input :photo, label: false %>
   <%= p.input :photo_cache, as: :hidden %>
   <%= p.submit "Submit", class: "btn" %>

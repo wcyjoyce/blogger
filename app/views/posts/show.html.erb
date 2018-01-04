@@ -7,6 +7,9 @@
     <h6><%= @post.created_at.strftime("%B %e, %Y") %></h6>
     <p><%= @post.content %></p>
   </div>
+  <div class="post-tags">
+    <%= raw tag_links(@post.all_tags) %>
+  </div>
   <div class="post-links">
     <% if policy(@post).edit? %>
       <%= link_to "EDIT", edit_post_path(@post), class: "btn" %>
