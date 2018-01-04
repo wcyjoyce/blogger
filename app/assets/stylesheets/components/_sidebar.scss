@@ -23,12 +23,17 @@
   font-size: 20px;
   letter-spacing: 1px;
   margin: 0px;
-  padding: 10px;
+  padding: 15px 10px;
 }
 
-.sidebar-bio {
+.sidebar-bio p {
   font-size: 14px;
   line-height: 1.25;
+  margin: 0px;
+
+  &:first-child {
+    margin-bottom: 15px;
+  }
 }
 
 .sidebar-links li {

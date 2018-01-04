@@ -5,12 +5,13 @@
     <h3>JOYCE WONG</h3>
   </div>
   <div class="sidebar-bio">
-    <p>I am a former investment analyst looking to make a career transition into web development. This blog is for me to practice my coding skills as well as for me to share my thoughts. Views are my own - you can see more via my social media accounts below.</p>
+    <p>I am a former investment analyst looking to make a career transition into web development. This blog is for me to practice my coding skills as well as for me to share my thoughts.</p>
+    <p>Views are my own - you can see more via my social media accounts below.</p>
   </div>
   <div class="sidebar-search">
     <%= form_tag(posts_path, method: :get) do %>
-      <%= text_field_tag :search, nil, placeholder: "SEARCH", class: "search-box" %>
-      <%= submit_tag "Search", class: "btn" %>
+      <%= text_field_tag :search, nil, placeholder: "SEARCH", class: "form-group" %>
+      <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
     <% end %>
   </div>
   <div class="sidebar-links">
