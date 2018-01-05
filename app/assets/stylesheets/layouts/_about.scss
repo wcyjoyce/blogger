@@ -104,3 +104,45 @@
     }
   }
 }
+
+.flex {
+  display: flex;
+
+  .half {
+    width: 50%;
+    padding: 10px;
+    margin: 0px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .flex {
+    flex-direction: column;
+  }
+
+  .about {
+    padding: 0px;
+
+    .about-photo {
+      margin: auto !important;
+    }
+
+    .about-description {
+      margin: 20px !important;
+    }
+  }
+
+  .contact {
+    padding: 0px;
+
+    .half {
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+
+      p {
+        margin: 0px;
+      }
+    }
+  }
+}

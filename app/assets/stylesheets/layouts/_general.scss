@@ -25,19 +25,3 @@ body {
     text-transform: uppercase;
   }
 }
-
-.flex {
-  display: flex;
-
-  .half {
-    width: 50%;
-    padding: 10px;
-    margin: 0px 15px;
-  }
-}
-
-@media (max-width: 600px) {
-  .flex {
-    flex-direction: column;
-  }
-}
