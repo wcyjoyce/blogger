@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = User.find(params[:id])
+    @posts = Post.all
     authorize @user
     @disable_sidebar = true
   end
