@@ -13,12 +13,12 @@
 
 .navbar-title {
   border: 5px solid $dark-gray;
-  padding: 5px 10px;
+  padding: 2.5px 10px;
   color: $dark-gray;
   font-family: "Lato", "sans-serif";
   font-size: 30px;
   font-weight: bolder;
-  letter-spacing: 10px;
+  letter-spacing: 7.5px;
 
   &:hover {
     text-decoration: none;
@@ -58,7 +58,7 @@
 
 // Mobile
 .dropdown {
-  padding-right: 15px;
+  // padding-right: 15px;
   cursor: pointer;
   color: $dark-gray;
 }
