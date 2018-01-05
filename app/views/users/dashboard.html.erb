@@ -1,6 +1,40 @@
 <div class="container">
   <h1>DASHBOARD</h1>
-  <%= link_to "Add New Post", new_post_path, class: "btn" %>
+  <div class="dashboard-header">
+    <div class="header-stats">
+      <div class="stat">
+        <div class="stat-label">Posts</div>
+        <div class="stat-number">10</div>
+      </div>
+      <div class="stat hidden">
+        <div class="stat-label">Drafts</div>
+        <div class="stat-number">10</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Following</div>
+        <div class="stat-number">10</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Followers</div>
+        <div class="stat-number">10</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Upvotes</div>
+        <div class="stat-number">10</div>
+      </div>
+    </div>
+    <% if @user == current_user %>
+      <div class="header-links">
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "btn" %>
+        <%= link_to "Newsfeed", posts_path, class: "btn" %>
+        <%= link_to "Add New Post", new_post_path, class: "btn" %>
+      </div>
+    <% else %>
+      <div class="header-links">
+        <div class="btn">Follow</div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <%= content_for(:title, "Dashboard") %>

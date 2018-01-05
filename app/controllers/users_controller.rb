@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:dashboard]
 
   def create
     @user = User.new(user_params)
