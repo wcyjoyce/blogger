@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="about">
+    <h1>ABOUT</h1>
+    <div class="flex">
+      <div class="about-photo" style="background-image: url(<%= image_path 'profile.jpg'; %>"></div>
+      <div class="about-description">
+        <div class="about-text">
+        <p>My name is Joyce and I'm a freelance web developer currently based in Hong Kong (until wherever the next opportunity lies).</p>
+        <p>I graduated from the <a href="http://www.lse.ac.uk">LSE</a> in the UK and have worked in the financial industry in both Hong Kong and London, before realising my interests are more geared towards <a href="http://www.joycewong.info/#portfolio" target="_blank">coding and web development</a> instead. I am now looking to make a career transition into web development, having completed an intensive nine-week coding bootcamp with <a href="https://www.lewagon.com" target="_blank">Le Wagon (London Batch #103)</a>.</p>
+        <p>My technical stack includes (but is not limited to) Ruby on Rails, HTML, CSS (SASS), JavaScript, SQL, git, GitHub and Heroku. </p>
+        <p>I like to build cool things, particularly on the web given its expanding reach, accessibility and evolution. Outside of work, I also enjoy a good workout and a good cup of coffee.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact">
+    <div class="flex">
+      <div class="half">
+        <h2>SOCIAL MEDIA</h2>
+        <p>For questions, inquiries, or casual conversations, please get in touch - either via the social media channels below or via the message form on the right.</p>
+        <table>
+          <tr>
+            <td><a href="http://www.joycewong.info"><i class="fa fa-user-circle" aria-hidden="true"></i></a></td>
+            <td class="detail"><a href="http://www.joycewong.info">JOYCEWONG.INFO</a></td>
+          </tr>
+          <tr>
+            <td><a href="http://www.linkedin.com/in/wcyjoyce"><i class="fa fa-linkedin" aria-hidden="true"></i></a></td>
+            <td class="detail"><a href="http://www.linkedin.com/in/wcyjoyce">LINKEDIN.COM / WCYJOYCE</a></td>
+          </tr>
+          <tr>
+            <td><a href="http://www.twitter.com/jcywonghk"><i class="fa fa-twitter" aria-hidden="true"></i></a></td>
+            <td class="detail"><a href="http://www.twitter.com/jcywonghk">@JCYWONGHK</a></td>
+          </tr>
+          <tr>
+            <td><a href="http://www.github.com/wcyjoyce"><i class="fa fa-github" aria-hidden="true"></i></a></td>
+            <td class="detail"><a href="http://www.github.com/wcyjoyce">GITHUB.COM / WCYJOYCE</a></td>
+          </tr>
+          <tr>
+            <td><a href="mailto:wcyjoyce.hk@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></td>
+            <td class="detail"><a href="mailto:wcyjoyce.hk@gmail.com">WCYJOYCE.HK@GMAIL.COM</a></td>
+          </tr>
+        </table>
+      </div>
+      <div class="half">
+        <h2>MESSAGE FORM</h2>
+        <div class="message-form">
+          <%= render "posts/form", post: @post %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= content_for(:title, "Typeprint | About") %>

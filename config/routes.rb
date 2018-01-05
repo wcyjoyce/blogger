@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get "tags/:tag", to: "posts#index", as: "tag"
 
   get "users/:id/dashboard", to: "users#dashboard", as: "dashboard"
-  get "pages/contact", to: "pages#contact", as: "contact"
+  get "pages/about", to: "pages#about", as: "about"
 end

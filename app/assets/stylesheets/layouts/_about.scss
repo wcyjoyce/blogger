@@ -1,0 +1,108 @@
+.about {
+  padding-bottom: 15px;
+
+  .about-photo {
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 150px;
+    min-height: 150px;
+    min-width: 150px;
+    margin: 0px 20px;
+  }
+
+  .about-description {
+    margin: 0px 20px;
+
+    a {
+      text-decoration: none;
+      color: $post;
+
+      &:hover {
+        color: $gray;
+        transition: all 0.3s ease;
+      }
+    }
+
+    p {
+      font-size: 15px;
+      color: $post;
+      text-align: justify;
+      margin-bottom: 12.5px;
+
+      &:last-child {
+        margin: 0px;
+      }
+    }
+  }
+}
+
+.contact {
+  text-align: center;
+  padding: 15px 0px;
+
+  p {
+    font-size: 15px;
+    color: $post;
+  }
+
+  h2 {
+    font-size: 20px;
+    color: $post;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    margin: 0px;
+    padding: 15px 10px;
+  }
+
+  table {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+
+    tr {
+      height: 30px;
+      width: 30px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    .fa {
+      // background: $dark-gray;
+      // color: white;
+      color: $dark-gray;
+      font-size: 22px;
+      border-radius: 50%;
+      width: 100%;
+      opacity: 0.75;
+      padding: 5px 7.5px;
+
+      &:hover {
+        background: $gray;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .detail {
+      font-family: "Lato", "sans-serif";
+      font-size: 12.5px;
+      letter-spacing: 1px;
+      text-align: left;
+      padding-left: 12.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $dark-gray;
+
+      &:hover {
+        text-decoration: none;
+        color: $gray;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

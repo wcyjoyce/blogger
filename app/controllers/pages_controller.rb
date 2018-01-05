@@ -4,7 +4,8 @@ class PagesController < ApplicationController
   def home
   end
 
-  def contact
+  def about
     @disable_sidebar = true
+    @post = Post.new
   end
 end
