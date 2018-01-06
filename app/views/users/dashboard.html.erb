@@ -4,7 +4,7 @@
     <div class="header-stats">
       <div class="stat">
         <div class="stat-label">Posts</div>
-        <div class="stat-number"><%= @posts.count %></div>
+        <div class="stat-number"><%= @user.posts.count %></div>
       </div>
       <div class="stat hidden">
         <div class="stat-label">Drafts</div>
@@ -20,7 +20,7 @@
       </div>
       <div class="stat">
         <div class="stat-label">Upvotes</div>
-        <div class="stat-number">10</div>
+        <div class="stat-number"><%= @user.upvotes.count %></div>
       </div>
     </div>
     <% if @user == current_user %>

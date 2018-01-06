@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: [:create]
+    resources :upvotes, only: [:new, :create]
   end
 
   get "tags/:tag", to: "posts#index", as: "tag"
