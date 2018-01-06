@@ -2,7 +2,7 @@
   <% if @posts.empty? %>
     <div class="post">
       <% if policy(post).edit? %>
-        <h3><%= link_to "There are no posts yet. Would you like to write one now?", new_post_path %></h3>
+        <h3><%= link_to "There are no published posts yet. Would you like to write one now?", new_post_path %></h3>
       <% else %>
         <h3><%= @user.first_name %> <%= @user.last_name %> has not written any posts yet.</h3>
       <% end %>
