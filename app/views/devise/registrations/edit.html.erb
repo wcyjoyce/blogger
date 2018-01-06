@@ -1,27 +1,46 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!-- Sidebar disabling -->
+<% @disable_sidebar = true %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+<div class="sessions-edit">
+  <h2>Edit Profile - <%= @user.first_name %> <%= @user.last_name %></h2>
+  <div class="sessions">
+    <div class="sessions-half">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <h3>Personal Details</h3>
+          <%= f.input :first_name, required: true, label: false, placeholder: "FIRST NAME" %>
+          <%= f.input :last_name, required: true, label: false, placeholder: "LAST NAME" %>
+          <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "EMAIL" %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+          <%= f.input :password, autocomplete: "off", label: false, placeholder: "PASSWORD (leave it blank to keep current password)", required: false %>
+          <%= f.input :password_confirmation, required: false, label: false, placeholder: "PASSWORD CONFIRMATION" %>
+        </div>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <div class="sessions-half">
+      <h3>More About You</h3>
+      <div class="form-inputs">
+        <%= f.input :website, label: false, placeholder: "WEBSITE" %>
+        <%= f.input :linkedin, label: false, placeholder: "LINKEDIN" %>
+        <%= f.input :twitter, label: false, placeholder: "TWITTER" %>
+        <%= f.input :bio, label: false, input_html: {rows: 3}, placeholder: "BIO" %>
+      </div>
+    </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <div class="sessions-confirm">
+    <h3>Confirm Profile Changes</h3>
+    <div class="form-inputs">
+      <%= f.input :current_password, label: false, placeholder: "CURRENT PASSWORD", required: true %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "UPDATE" %>
+      <%= link_to "Cancel account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn" %>
+      <%= link_to "BACK", :back, class: "btn" %>
+      <% end %>
+    </div>
   </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
