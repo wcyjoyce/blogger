@@ -2,4 +2,4 @@
   <h1>NEWSFEED</h1>
 </div>
 
-<%= content_for(:title, "Newsfeed | " + @user.first_name + " " + @user.last_name) %>
+<%= content_for(:title, "Newsfeed | " + @user.first_name.capitalize + " " + @user.last_name.capitalize) %>
