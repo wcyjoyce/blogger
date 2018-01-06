@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :upvotes, only: [:index]
 
+  resources :messages, only: [:new, :create, :show]
+
   get "tags/:tag", to: "posts#index", as: "tag"
 
   get "users/:id/dashboard", to: "users#dashboard", as: "dashboard"

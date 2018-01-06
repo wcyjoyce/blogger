@@ -1,0 +1,12 @@
+<%= simple_form_for(message) do |m| %>
+  <div class="col-lg-6 col-sm-6 col-xs-12">
+    <%= m.input :name, label: false, placeholder: "NAME" %>
+  </div>
+  <div class="col-lg-6 col-sm-6 col-xs-12">
+    <%= m.input :email, label: false, placeholder: "EMAIL" %>
+  </div>
+  <div class="col-lg-12 col-sm-12 col-xs-12">
+    <%= m.input :message, input_html: {rows: 5}, label: false, placeholder: "MESSAGE" %>
+  </div>
+  <%= m.submit "SEND MESSAGE", class: "btn form-action" %>
+<% end %>

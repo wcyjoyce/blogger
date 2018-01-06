@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>ALL MESSAGES</h1>
+  <% if @messages.empty? %>
+    <div class="message-body">
+      There are no messages yet as of <%= Time.now.strftime("%l:%M %p, %d %B %Y") %>.
+    </div>
+  <% else %>
+    <% @messages.each do |message| %>
+      <% message_colour = [] %>
+      <% message_colour << "colour" if message.id % 2 == 0 %>
+
+      <div class="message <%= message_colour.join(" ") %>">
+        <div class="message-header">
+          <div class="header-user"><strong><%= message.name.upcase %></strong> (<%= message.email.upcase %>)</div>
+          <div class="header-divider">|</div>
+          <div class="header-datetime"><%= message.created_at.strftime("%d %B %Y %l:%M %p") %></div>
+        </div>
+        <div class="message-body">
+          <%= message.message %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
