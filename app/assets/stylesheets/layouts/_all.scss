@@ -1,5 +1,14 @@
 .posts {
   padding: 0px 7.5px;
+
+  h1 {
+    font-size: 30px;
+    letter-spacing: 7.5px;
+    font-weight: bolder;
+    color: $post;
+    margin-top: 12.5px;
+    text-transform: uppercase;
+  }
 }
 
 .post {
