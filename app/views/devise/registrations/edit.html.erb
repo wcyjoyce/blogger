@@ -3,6 +3,7 @@
 
 <div class="sessions-edit">
   <h2>Edit Profile - <%= @user.first_name %> <%= @user.last_name %></h2>
+
   <div class="sessions">
     <div class="sessions-half">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -29,8 +30,8 @@
         <%= f.input :bio, label: false, input_html: {rows: 3}, placeholder: "BIO" %>
       </div>
     </div>
-
   </div>
+
   <div class="sessions-confirm">
     <h3>Confirm Profile Changes</h3>
     <div class="form-inputs">
@@ -44,3 +45,5 @@
     </div>
   </div>
 </div>
+
+<%= content_for(:title, @user.email + "Edit Profile") %>
