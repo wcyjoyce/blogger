@@ -6,6 +6,17 @@
     display: flex;
     align-items: center;
     flex-direction: flex-start;
+    color: $post;
+
+     a {
+      text-decoration: none;
+      color: $post;
+
+      &:hover {
+        color: $gray;
+        transition: all 0.3s ease;
+      }
+     }
 
     .stat {
       text-align: center;
