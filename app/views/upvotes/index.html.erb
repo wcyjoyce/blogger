@@ -1,0 +1,21 @@
+<div class="posts">
+  <h1>Upvotes</h1>
+  <% if @upvotes.empty? %>
+  <div class="post">
+    <h3>You have not upvoted any posts yet.</h3>
+  </div>
+  <% else %>
+    <% @upvotes.each do |upvote| %>
+      <div class="post">
+        <h3><%= link_to upvote.post.title, post_path(upvote.post) %></h3>
+        <h6><%= upvote.post.created_at.strftime("%B %e, %Y") %></h6>
+        <p><%= upvote.post.content %></p>
+      </div>
+      <div class="post-tags">
+        <%= raw tag_links(upvote.post.all_tags) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<%= content_for(:title, "Upvoted by " + @user.first_name + " " + @user.last_name) %>

@@ -1,6 +1,11 @@
 class UpvotesController < ApplicationController
   before_action :set_post, only: [:new, :create]
-  before_action :set_user, only: [:new, :create]
+  before_action :set_user, only: [:index, :new, :create]
+  skip_before_action :authenticate_user!, only: [:index]
+
+  def index
+    @upvotes = policy_scope(Upvote).order(created_at: :desc)
+  end
 
   def new
     @upvote = Upvote.new

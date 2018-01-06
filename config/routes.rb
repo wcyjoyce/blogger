@@ -7,8 +7,11 @@ Rails.application.routes.draw do
     resources :upvotes, only: [:new, :create]
   end
 
+  resources :upvotes, only: [:index]
+
   get "tags/:tag", to: "posts#index", as: "tag"
 
   get "users/:id/dashboard", to: "users#dashboard", as: "dashboard"
+  get "users/:id/newsfeed", to: "users#newsfeed", as: "newsfeed"
   get "pages/about", to: "pages#about", as: "about"
 end
