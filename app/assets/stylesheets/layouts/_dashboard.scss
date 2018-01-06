@@ -1,43 +1,43 @@
 .dashboard-header {
   display: flex;
   justify-content: space-between;
+}
 
-  .header-stats {
-    display: flex;
-    align-items: center;
-    flex-direction: flex-start;
+.header-stats {
+  display: flex;
+  align-items: center;
+  flex-direction: flex-start;
+  color: $post;
+
+   a {
+    text-decoration: none;
     color: $post;
 
-     a {
-      text-decoration: none;
-      color: $post;
-
-      &:hover {
-        color: $gray;
-        transition: all 0.3s ease;
-      }
-     }
-
-    .stat {
-      text-align: center;
-      padding-right: 35px;
-
-      .stat-label {
-        font-family: "Lato", "sans-serif";
-        font-size: 12px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-
-      .stat-number {
-        font-family: "Lato", "sans-serif";
-        font-size: 14px;
-        letter-spacing: 1px;
-      }
+    &:hover {
+      color: $gray;
+      transition: all 0.3s ease;
     }
+   }
+ }
+
+.stat {
+  text-align: center;
+  padding-right: 35px;
+
+  .stat-label {
+    font-family: "Lato", "sans-serif";
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
-  .header-links .btn {
-    margin: 0px 2.5px;
+  .stat-number {
+    font-family: "Lato", "sans-serif";
+    font-size: 14px;
+    letter-spacing: 1px;
   }
+}
+
+.header-links .btn {
+  margin: 0px 2.5px;
 }
