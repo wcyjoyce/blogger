@@ -23,6 +23,11 @@ gem 'figaro'
 gem 'cloudinary', '1.1.7'
 gem 'carrierwave', '~> 1.2'
 
+# Charts
+gem 'chartkick'
+gem 'highcharts-rails'
+gem 'groupdate'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
