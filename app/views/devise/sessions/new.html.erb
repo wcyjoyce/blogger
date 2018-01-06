@@ -29,10 +29,7 @@
         <%= f.input :password_confirmation, required: true, label: false, placeholder: "CONFIRM PASSWORD" %>
       </div>
       <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
-        <%- if devise_mapping.recoverable? && controller_name != "passwords" && controller_name != "registrations" %>
-          <%= link_to "FORGOT PASSWORD", new_password_path(resource_name), class: "btn" %>
-        <% end %>
+        <%= f.button :submit, "Sign Up" %>
       <% end %>
     </div>
   </div>

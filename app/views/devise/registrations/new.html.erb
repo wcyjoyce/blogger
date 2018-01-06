@@ -10,11 +10,9 @@
       </div>
       <div class="form-actions">
         <%= f.button :submit, "Log In" %>
-        <%- if devise_mapping.recoverable? && controller_name != "passwords" && controller_name != "registrations" %>
-          <%= link_to "FORGOT PASSWORD", new_password_path(resource_name), class: "btn" %>
-        <% end %>
-      <% end %>
-    </div>
+        <%- link_to "FORGOT PASSWORD", new_password_path(resource_name), class: "btn" if devise_mapping.recoverable? && controller_name != "passwords" && controller_name != "registrations" %>
+      </div>
+    <% end %>
   </div>
 
   <div class="sessions-half">
@@ -29,10 +27,7 @@
         <%= f.input :password_confirmation, required: true, label: false, placeholder: "CONFIRM PASSWORD" %>
       </div>
       <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
-        <%- if devise_mapping.recoverable? && controller_name != "passwords" && controller_name != "registrations" %>
-          <%= link_to "FORGOT PASSWORD", new_password_path(resource_name), class: "btn" %>
-        <% end %>
+        <%= f.button :submit, "Sign Up" %>
       <% end %>
     </div>
   </div>
