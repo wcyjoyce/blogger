@@ -6,6 +6,6 @@ class PagesController < ApplicationController
 
   def about
     @disable_sidebar = true
-    @post = Post.new
+    @message = Message.new
   end
 end
