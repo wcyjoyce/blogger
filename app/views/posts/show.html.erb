@@ -8,7 +8,11 @@
     <%= raw tag_links(@post.all_tags) %>
   </div>
   <div class="post-links">
+
+    <%= render "upvotes/form", post: @post, upvote: Upvote.new %>
+
     <% if policy(@post).edit? %>
+      <div class="btn">Upvotes (<%= @post.upvotes.count %>)</div>
       <%= link_to "EDIT", edit_post_path(@post), class: "btn" %>
       <%= link_to "DELETE", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "btn" %>
     <% end %>
