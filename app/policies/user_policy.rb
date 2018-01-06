@@ -8,4 +8,9 @@ class UserPolicy < ApplicationPolicy
   def dashboard?
     return true
   end
+
+  def newsfeed?
+    return true
+    # record.user == user
+  end
 end
