@@ -14,7 +14,7 @@
       <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
     <% end %>
   </div>
-  <div class="tag-cloud">
+  <div class="tag-cloud hidden">
     <% cloud = [] %>
     <% unless @posts.nil? %>
       <% @posts.each do |post| %>
