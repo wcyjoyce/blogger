@@ -22,6 +22,8 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
+        <%= f.input :first_name, required: true, label: false, placeholder: "FIRST NAME" %>
+        <%= f.input :last_name, required: true, label: false, placeholder: "LAST NAME" %>
         <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "EMAIL" %>
         <%= f.input :password, required: true, label: false, placeholder: "PASSWORD (6 CHARACTERS MINIMUM)", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true, label: false, placeholder: "CONFIRM PASSWORD" %>
