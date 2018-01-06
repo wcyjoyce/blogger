@@ -6,8 +6,8 @@
   <% end %>
 </div>
 
-<!-- Posts: Published -->
-<div class="banners" id="published-posts">
+<!-- Published Posts -->
+<div class="banners post-banners" id="published-posts">
   <% if @user.posts.empty? %>
     <div class="placeholder-message">There are no published posts yet.</div>
   <% else %>
@@ -30,9 +30,9 @@
   <% end %>
 </div>
 
-<!-- Posts: Drafts -->
+<!-- Draft Posts -->
 <% if @user == current_user %>
-  <div class="banners hidden" id="draft-posts">
+  <div class="banners post-banners hidden" id="draft-posts">
     <div class="placeholder-message">You don't have any draft posts.
     </div>
   </div>
@@ -43,14 +43,14 @@
     const publishedPosts = document.getElementById("published-tab");
     publishedPosts.addEventListener("click", (event) => {
       event.preventDefault();
-      $(".banners").addClass("hidden")
+      $(".post-banners").addClass("hidden")
       $("#published-posts").removeClass("hidden")
     });
 
     const draftPosts = document.getElementById("draft-tab");
     draftPosts.addEventListener("click", (event) => {
       event.preventDefault();
-      $(".banners").addClass("hidden")
+      $(".post-banners").addClass("hidden")
       $("#draft-posts").removeClass("hidden")
     });
   </script>
