@@ -9,7 +9,7 @@
   </div>
   <div class="post-links">
 
-    <%= render "upvotes/form", post: @post, upvote: Upvote.new %>
+    <%= render "upvotes/form", post: @post, upvote: Upvote.new if policy(@post).edit? == false %>
 
     <% if policy(@post).edit? %>
       <div class="btn">Upvotes (<%= @post.upvotes.count %>)</div>
