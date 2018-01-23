@@ -29,3 +29,19 @@
   width: 100%;
   margin-bottom: 15px;
 }
+
+.post-header-flex {
+  display: flex;
+  align-items: center;
+
+  h6 {
+    padding-right: 7.5px;
+  }
+
+  .post-name a {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 0.25px;
+  }
+}
