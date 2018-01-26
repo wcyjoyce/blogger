@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:dashboard, :newsfeed]
+  before_action :set_user, only: [:dashboard, :newsfeed, :following, :followers]
   skip_before_action :authenticate_user!, only: [:dashboard]
 
   def create
@@ -35,3 +35,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :email, :password, :bio, :website, :linkedin, :twitter)
   end
 end
+
