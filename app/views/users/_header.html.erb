@@ -20,7 +20,7 @@
   </div>
   <div class="stat">
     <div class="stat-label">Followers</div>
-    <div class="stat-number">--</div>
+    <div class="stat-number"><%= @user.followers.count %></div>
   </div>
   <div class="stat">
     <% if @user.upvotes.count > 0 %>
