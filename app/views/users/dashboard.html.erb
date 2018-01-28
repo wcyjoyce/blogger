@@ -1,4 +1,5 @@
 <div class="container">
+  <%= link_to "link", following_path(@user) %>
   <h1><%= @user == current_user ? "DASHBOARD" : @user.first_name + " " + @user.last_name %></h1>
   <div class="dashboard-header"><%= render "header" %></div>
   <div class="dashboard-grid">

@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   get "users/:id/dashboard", to: "users#dashboard", as: "dashboard"
   get "users/:id/newsfeed", to: "users#newsfeed", as: "newsfeed"
+  get "users/:id/following", to: "users#following", as: "following"
+  get "users/:id/followers", to: "users#followers", as: "followers"
+
   get "pages/about", to: "pages#about", as: "about"
 
   root to: "posts#index"
