@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def index
     if params[:tag]
       @posts = policy_scope(Post).tagged_with(params[:tag]).order(created_at: :desc)
+      @title = params[:tag]
     elsif params[:search].present?
       @posts = policy_scope(Post).order(created_at: :desc).global_search(params[:search])
     else
