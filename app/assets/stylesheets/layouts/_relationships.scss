@@ -1,0 +1,83 @@
+.relationships {
+  padding: 0px 7.5px;
+  width: 100%;
+
+  h1 {
+    font-size: 30px;
+    letter-spacing: 7.5px;
+    font-weight: bolder;
+    color: $post;
+    margin-top: 12.5px;
+    text-transform: uppercase;
+  }
+}
+
+.relationship {
+  color: $dark-gray;
+  display: flex;
+  padding: 7.5px 0px;
+
+  a {
+    text-decoration: none;
+    color: $dark-gray;
+
+    &:hover {
+      color: $post;
+      transition: all 0.3s ease;
+    }
+  }
+
+  h3 {
+    margin: 0px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+  }
+
+  .relationship-content {
+    width: 100%;
+    padding-left: 15px;
+  }
+
+  .relationship-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .relationship-text {
+      display: flex;
+      align-items: center;
+    }
+
+    .relationship-icons {
+      display: flex;
+      padding: 0px 15px;
+    }
+
+    .relationship-icon {
+      font-size: 14px;
+      color: $dark-gray;
+      padding: 0px 5px;
+    }
+
+    .relationship-stat {
+      padding: 0px 12.5px;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .btn {
+      margin: 0px;
+      color: $post;
+      border: 1px solid $post;
+    }
+  }
+
+  .relationship-footer {
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 5px 0px;
+  }
+}
