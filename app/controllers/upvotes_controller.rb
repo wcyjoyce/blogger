@@ -20,7 +20,7 @@ class UpvotesController < ApplicationController
     if @upvote.save
       redirect_to root_path, notice: "Thanks for upvoting!"
     else
-      redirect_to root_path, notice: "You have already upvoted!"
+      redirect_to root_path, alert: "You have already upvoted!"
     end
   end
 
