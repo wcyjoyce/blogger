@@ -53,12 +53,12 @@
     .relationship-icons {
       display: flex;
       padding: 0px 15px;
-    }
 
-    .relationship-icon {
-      font-size: 14px;
-      color: $dark-gray;
-      padding: 0px 5px;
+      .relationship-icon {
+        font-size: 14px;
+        color: $dark-gray;
+        padding: 0px 5px;
+      }
     }
 
     .relationship-stat {
