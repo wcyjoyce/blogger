@@ -38,7 +38,6 @@
                 <% end %>
               </div>
             </div>
-            <!-- <div class="btn">Follow</div> -->
             <% if current_user.following?(user) %>
               <%= render "relationships/unfollow" %>
             <% else %>
