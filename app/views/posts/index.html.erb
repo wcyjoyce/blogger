@@ -8,6 +8,9 @@
       <% end %>
     </div>
   <% else %>
+    <% if params[:tag] %>
+      <h1>All Posts Tagged With "<%= @title %>"</h1>
+    <% end %>
     <% @posts.each do |post| %>
       <div class="post">
         <h3><%= link_to post.title, post_path(post) %></h3>

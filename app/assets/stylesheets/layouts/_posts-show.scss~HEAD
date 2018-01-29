@@ -30,3 +30,21 @@
   margin-bottom: 15px;
 }
 
+<<<<<<< HEAD:app/assets/stylesheets/layouts/_posts-show.scss~HEAD
+=======
+.post-header-flex {
+  display: flex;
+  align-items: center;
+
+  h6 {
+    padding-right: 7.5px;
+  }
+
+  .post-name a {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 0.25px;
+  }
+}
+>>>>>>> e6ddf8428538b242a804c125ef413be35e68e479:app/assets/stylesheets/layouts/_show.scss
