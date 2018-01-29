@@ -1,0 +1,32 @@
+.show {
+  width: 100%;
+  padding-left: 20px;
+
+  h1 {
+    font-size: 30px;
+    letter-spacing: 7.5px;
+    font-weight: bolder;
+    color: $post;
+    margin-top: 12.5px;
+    text-transform: uppercase;
+  }
+
+  h6 {
+    font-size: 14px;
+    font-family: "Source Sans Pro", "sans-serif";
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 0px;
+    color: $post;
+    text-align: justify;
+  }
+}
+
+.post-image {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
