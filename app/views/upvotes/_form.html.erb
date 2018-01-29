@@ -1,4 +1,5 @@
 <%= simple_form_for([post, upvote]) do |u| %>
-  <%= u.input :upvote, class: "hidden" %>
-  <%= u.submit "UPVOTE", class: "btn" %>
+  <%= u.input :upvote, as: :hidden %>
+  <%= u.submit "UPVOTES ("+ post.upvotes.count.to_s + ")", class: "btn" %>
 <% end %>
+

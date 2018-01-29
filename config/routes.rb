@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {registrations: "registrations"}
-  root to: "posts#index"
+  devise_for :users, controllers: {registrations: "registrations"} do
+    member do
+      get :following, :followers
+    end
+  end
 
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: [:create]
@@ -8,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :upvotes, only: [:index]
+  resources :relationships, only: [:create, :destroy]
 
   resources :messages, only: [:new, :create, :show]
 
@@ -15,5 +19,10 @@ Rails.application.routes.draw do
 
   get "users/:id/dashboard", to: "users#dashboard", as: "dashboard"
   get "users/:id/newsfeed", to: "users#newsfeed", as: "newsfeed"
+  get "users/:id/following", to: "users#following", as: "following"
+  get "users/:id/followers", to: "users#followers", as: "followers"
+
   get "pages/about", to: "pages#about", as: "about"
+
+  root to: "posts#index"
 end
