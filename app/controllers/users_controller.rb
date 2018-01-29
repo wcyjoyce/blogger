@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:dashboard, :newsfeed]
+  before_action :set_user, only: [:dashboard, :newsfeed, :following, :followers]
   skip_before_action :authenticate_user!, only: [:dashboard]
 
   def create
@@ -25,6 +25,20 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def following
+    @title = "Following"
+    @users = @user.following
+    render "show"
+    authorize @user
+  end
+
+  def followers
+    @title = "Followers"
+    @users = @user.followers
+    render "show"
+    authorize @user
+  end
+
   private
 
   def set_user
@@ -35,3 +49,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :email, :password, :bio, :website, :linkedin, :twitter)
   end
 end
+

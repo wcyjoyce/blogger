@@ -43,6 +43,10 @@
             <% else %>
               <%= render "relationships/follow" %>
             <% end %>
+<<<<<<< HEAD
+=======
+
+>>>>>>> relationship-show
           </div>
           <div class="relationship-footer">
             <%= user.bio.chars.count > 300 ? user.bio.chars.first(300).join("") + "..." : user.bio %>
@@ -54,4 +58,7 @@
 </div>
 
 <%= content_for(:title, @user.first_name + " " + @user.last_name + " | " + @title) %>
+<<<<<<< HEAD
 
+=======
+>>>>>>> relationship-show

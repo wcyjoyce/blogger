@@ -15,3 +15,14 @@
     transition: all 0.3s ease;
   }
 }
+
+.following {
+  background: $dark-gray;
+  border: 1px solid $dark-gray !important;
+  color: white !important;
+
+  &:hover {
+    background: $wine;
+    border: 1px solid $wine !important;
+  }
+}

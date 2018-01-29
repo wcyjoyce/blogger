@@ -36,4 +36,4 @@
   </div>
 </div>
 
-<%= content_for(:title, @post.title.split.map { |p| p.capitalize}.join(" ")) %>
+<%= content_for(:title, @post.title.split.map { |p| p.capitalize}.join(" ") + " | " + @post.user.first_name) %>

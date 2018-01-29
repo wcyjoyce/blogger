@@ -13,4 +13,14 @@ class UserPolicy < ApplicationPolicy
     return true
     # record.user == user
   end
+
+  def following?
+    return true
+    # record.user == user
+  end
+
+  def followers?
+    return true
+    # record.user == user
+  end
 end
