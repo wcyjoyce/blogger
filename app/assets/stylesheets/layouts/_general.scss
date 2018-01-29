@@ -25,3 +25,11 @@ body {
     text-transform: uppercase;
   }
 }
+
+.avatar {
+  border: 1px solid $post;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  padding-right: 75px;
+}

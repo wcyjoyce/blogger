@@ -25,6 +25,20 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def following
+    @title = "Following"
+    @users = @user.following
+    render "show"
+    authorize @user
+  end
+
+  def followers
+    @title = "Followers"
+    @users = @user.followers
+    render "show"
+    authorize @user
+  end
+
   private
 
   def set_user
