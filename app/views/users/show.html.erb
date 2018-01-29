@@ -45,7 +45,9 @@
             <% end %>
           </div>
           <div class="relationship-footer">
-            <%= user.bio.chars.count > 300 ? user.bio.chars.first(300).join("") + "..." : user.bio %>
+            <% unless user.bio.nil? %>
+              <%= user.bio.chars.count > 300 ? user.bio.chars.first(300).join("") + "..." : user.bio %>
+            <% end %>
           </div>
         </div>
       </div>
