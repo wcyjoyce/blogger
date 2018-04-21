@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Chartkick -->
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+    <%= stylesheet_link_tag 'http://yandex.st/bootstrap/3.1.1/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js' %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/ico" href="<%= image_url('favicon.ico') %>" />
