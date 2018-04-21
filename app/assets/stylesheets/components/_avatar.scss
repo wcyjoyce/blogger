@@ -1,0 +1,34 @@
+.relationship-avatar {
+  border: 1px solid $post;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  padding-right: 75px;
+}
+
+.upvote-grid {
+  display: flex;
+}
+
+.upvote-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 30px;
+  padding: 2.5px;
+  margin: 2.5px;
+}
+
+.upvote-avatar {
+  border: 1px solid $dark-gray;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+}
+
+.avatar-name {
+  padding-top: 2.5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: $dark-gray;
+}
