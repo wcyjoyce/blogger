@@ -32,7 +32,7 @@
               <% post.upvotes.each do |upvote| %>
                 <%= link_to dashboard_path(upvote.user) do %>
                   <div class="upvote-info">
-                    <div class="upvote-avatar"></div>
+                    <div class="upvote-avatar"><%= cl_image_tag @user.photo unless @user.photo.nil? %></div>
                     <div class="avatar-name"><%= upvote.user.first_name %></div>
                   </div>
                 <% end %>
