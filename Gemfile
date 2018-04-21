@@ -27,6 +27,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'chartkick'
 gem 'highcharts-rails'
 gem 'groupdate'
+gem 'active_median'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
