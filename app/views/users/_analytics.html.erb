@@ -1,2 +1,60 @@
 <h3>ANALYTICS</h3>
-<%= column_chart @user.posts.group_by_month(:created_at, format: "%b %Y").count, colors: ["gray"] %>
+<div class="tabs">
+  <a href="#" class="tab" id="post-tab">POSTS (<%= @user.posts.count %>)</a>
+  <a href="#" class="tab" id="comment-tab">COMMENTS (5)</a>
+  <a href="#" class="tab" id="upvote-tab">UPVOTES (5)</a>
+</div>
+
+<!-- Posts -->
+<div class="analytics chart" id="post-analytics">
+  <%= column_chart @user.posts.group_by_month(:created_at, format: "%b %Y").count, colors: ["gray"] %>
+</div>
+
+<!-- Upvotes -->
+<div class="banners analytics hidden" id="upvote-analytics">
+  <% @user.posts.order(created_at: :desc).first(3).each do |post| %>
+    <div class="banner">
+      <%= link_to post_path(post) do %>
+        <div class="banner-title">
+          <h4><%= post.title.upcase %></h4>
+          <h5><%= post.created_at.strftime("%B %e, %Y").upcase %></h5>
+        </div>
+        <div class="banner-body">
+          <% if post.upvotes.empty? %>
+            <div class="placeholder-message">There are no upvotes yet.</div>
+          <% else %>
+            <div class="upvote-grid">
+              <% post.upvotes.each do |upvote| %>
+                <%= link_to dashboard_path(upvote.user) do %>
+                  <div class="upvote-info">
+                    <div class="upvote-avatar"></div>
+                    <div class="avatar-name"><%= upvote.user.first_name %></div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= link_to "And " + (@user.posts.count - 3).to_s + " more...", posts_path, class: "banner-footer" if @user.posts.count > 3 %>
+</div>
+
+<% content_for(:after_js) do %>
+  <script>
+    const postAnalytics = document.getElementById("post-tab");
+    postAnalytics.addEventListener("click", (event) => {
+      event.preventDefault();
+      $(".analytics").addClass("hidden")
+      $("#post-analytics").removeClass("hidden")
+    });
+
+    const upvoteAnalytics = document.getElementById("upvote-tab");
+    upvoteAnalytics.addEventListener("click", (event) => {
+      event.preventDefault();
+      $(".analytics").addClass("hidden")
+      $("#upvote-analytics").removeClass("hidden")
+    });
+  </script>
+<% end %>
