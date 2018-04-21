@@ -14,13 +14,13 @@
     <% @user.posts.order(created_at: :desc).first(3).each do |post| %>
       <div class="banner">
         <%= link_to post_path(post) do %>
-        <div class="banner-title">
-          <h4><%= post.title.upcase %></h4>
-          <h5><%= post.created_at.strftime("%B %e, %Y").upcase %></h5>
-        </div>
-        <div class="banner-body">
-          <%= post.content.chars.count > 80 ? post.content.first(80) + "..." : post.content %>
-        </div>
+          <div class="banner-title">
+            <h4><%= post.title.upcase %></h4>
+            <h5><%= post.created_at.strftime("%B %e, %Y").upcase %></h5>
+          </div>
+          <div class="banner-body">
+            <%= post.content.chars.count > 80 ? post.content.first(80) + "..." : post.content %>
+          </div>
         <% end %>
       </div>
     <% end %>
