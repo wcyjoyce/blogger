@@ -1,11 +1,11 @@
 <div class="posts">
   <h1>Upvotes</h1>
-  <% if @upvotes.empty? %>
+  <% if @user.upvotes.empty? %>
   <div class="post">
     <h3>You have not upvoted any posts yet.</h3>
   </div>
   <% else %>
-    <% @upvotes.each do |upvote| %>
+    <% @user.upvotes.each do |upvote| %>
       <div class="post">
         <h3><%= link_to upvote.post.title, post_path(upvote.post) %></h3>
         <div class="post-header-flex">
