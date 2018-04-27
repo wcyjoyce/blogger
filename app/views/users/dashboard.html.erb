@@ -2,10 +2,15 @@
   <h1><%= @user == current_user ? "DASHBOARD" : @user.first_name + " " + @user.last_name %></h1>
   <div class="dashboard-header"><%= render "header" %></div>
   <div class="dashboard-grid">
-    <div class="dashboard-box left"><%= render "activity" %></div> <!-- Activity Stream -->
-    <div class="dashboard-box right"><%= render "analytics" %></div> <!-- Analytics -->
-    <div class="dashboard-box left"><%= render "comments" %></div> <!-- Comments -->
-    <div class="dashboard-box right"><%= render "posts" %></div> <!-- Posts -->
+    <% if @user == current_user %>
+      <div class="dashboard-box left"><%= render "activity" %></div> <!-- Activity Stream -->
+      <div class="dashboard-box right"><%= render "analytics" %></div> <!-- Analytics -->
+      <div class="dashboard-box left"><%= render "comments" %></div> <!-- Comments -->
+      <div class="dashboard-box right"><%= render "posts" %></div> <!-- Posts -->
+    <% else %>
+      <div class="dashboard-box left"><%= render "analytics" %></div> <!-- Analytics -->
+      <div class="dashboard-box right"><%= render "posts" %></div> <!-- Posts -->
+    <% end %>
   </div>
 </div>
 
