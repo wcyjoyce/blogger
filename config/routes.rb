@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   get "users/:id/following", to: "users#following", as: "following"
   get "users/:id/followers", to: "users#followers", as: "followers"
 
+  get "pages/home", to: "pages#home", as: "home"
   get "pages/about", to: "pages#about", as: "about"
 
-  get "pages/home"
   root to: "pages#home"
 end
