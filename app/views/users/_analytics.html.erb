@@ -1,13 +1,22 @@
 <h3>ANALYTICS</h3>
 <div class="tabs">
-  <a href="#" class="tab" id="post-tab">POSTS (<%= @user.posts.count %>)</a>
-  <a href="#" class="tab" id="comment-tab">COMMENTS (5)</a>
-  <a href="#" class="tab" id="upvote-tab">UPVOTES (5)</a>
+  <% if @user == current_user %>
+    <a href="#" class="tab" id="post-tab">POSTS (<%= @user.posts.count %>)</a>
+    <a href="#" class="tab" id="comment-tab">COMMENTS (5)</a>
+    <a href="#" class="tab" id="upvote-tab">UPVOTES (5)</a>
+  <% else %>
+    <a href="#" class="tab" id="post-tab">POSTS (<%= @user.posts.count %>)</a>
+    <a href="#" class="tab" id="upvote-tab">UPVOTES (5)</a>
+  <% end %>
 </div>
 
 <!-- Posts -->
 <div class="analytics chart" id="post-analytics">
-  <%= column_chart @user.posts.group_by_month(:created_at, format: "%b %Y").count, colors: ["gray"] %>
+  <% if @user.posts.empty? %>
+    <div class="placeholder-message"><%= @user.first_name.capitalize %> has not posted anything yet.</div>
+  <% else %>
+    <%= column_chart @user.posts.group_by_month(:created_at, format: "%b %Y").count, colors: ["gray"] %>
+  <% end %>
 </div>
 
 <!-- Comments -->
