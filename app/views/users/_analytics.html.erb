@@ -7,7 +7,7 @@
     <a href="#" class="tab" id="upvote-tab">UPVOTES (<%= @user.upvote_count %>)</a>
   <% else %>
     <a href="#" class="tab" id="post-tab">POSTS (<%= @user.posts.count %>)</a>
-    <a href="#" class="tab" id="upvote-tab">UPVOTES (5)</a>
+    <a href="#" class="tab" id="upvote-tab">UPVOTES (<%= @user.upvote_count %>)</a>
   <% end %>
 </div>
 
@@ -32,9 +32,6 @@
     <% if @user.posts.empty? %>
       <div class="placeholder-message"><%= link_to "There are no published posts yet. Would you like to write one now?", new_post_path %></div>
     <% else %>
-
-      <% line_chart Comment.group(:created_at).sum(:post_id) %>
-
     <% end %>
   <% end %>
 </div>
