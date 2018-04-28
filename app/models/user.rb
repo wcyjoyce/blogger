@@ -30,10 +30,24 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
-  def comment_count
-    comment_count = 0
-    posts.each { |post| comment_count += post.comments.count.to_i }
-    comment_count
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
+
+  def activity
+    activity_feed = []
+    following.each do |following|
+      following.posts.each do |post|
+        activity_feed << {
+          user: post.user,
+          name: post.user.full_name,
+          title: post.title,
+          content: post.content,
+          created_at: post.created_at
+        }
+      end
+    end
+    activity_feed.sort_by { |a| a[:created_at] }.reverse!
   end
 
   def total_comments
@@ -50,6 +64,12 @@ class User < ApplicationRecord
       end
     end
     total_comments.sort_by { |c| c[:created_at] }.reverse!
+  end
+
+  def comment_count
+    comment_count = 0
+    posts.each { |post| comment_count += post.comments.count.to_i }
+    comment_count
   end
 
   def upvote_count
