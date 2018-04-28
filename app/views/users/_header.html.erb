@@ -51,7 +51,7 @@
 <% if @user == current_user %>
   <div class="header-links">
     <%= link_to "Edit Profile", edit_user_registration_path, class: "btn" %>
-    <%= link_to "Newsfeed", newsfeed_path(current_user), class: "btn" %>
+    <%= link_to "Newsfeed", dashboard_path(current_user), class: "btn" %>
     <%= link_to "Add New Post", new_post_path, class: "btn" %>
   </div>
 <% else %>
