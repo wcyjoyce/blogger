@@ -95,6 +95,15 @@
       color: $dark-gray;
       margin: 0px;
     }
+
+    .banner-upvote {
+      display: flex;
+      align-items: center;
+
+      h5 {
+        padding-left: 10px;
+      }
+    }
   }
 
   .banner-body {
