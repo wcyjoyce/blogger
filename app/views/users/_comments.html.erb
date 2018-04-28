@@ -1,1 +1,21 @@
 <h3>COMMENTS</h3>
+
+<% if @user.total_comments.empty? %>
+  <div class="placeholder-message">There are no comments on your posts yet.</div>
+<% else %>
+  <div class="banners">
+    <% @user.total_comments.first(3).each do |comment| %>
+      <div class="banner">
+        <div class="banner-title">
+          <h4><%= comment[:post] %></h4>
+          <h5><%= comment[:created_at].strftime("%B %e, %Y").upcase %></h5>
+        </div>
+        <div class="banner-body">
+          <div class="banner-creator">By <%= comment[:name] %></div>
+          <%= comment[:comment].chars.count > 80 ? comment[:comment].chars.first(80).join + "..." : comment[:comment] %>
+        </div>
+      </div>
+    <% end %>
+    <div class="banner-footer"><%= "And " + (@user.total_comments.count - 3).to_s + " more..." if @user.total_comments.count > 3 %></div>
+  </div>
+<% end %>
