@@ -29,4 +29,32 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
+
+  def comment_count
+    comment_count = 0
+    posts.each { |post| comment_count += post.comments.count.to_i }
+    comment_count
+  end
+
+  def total_comments
+    total_comments = []
+    posts.each do |post|
+      post.comments.each do |comment|
+        total_comments << {
+          id: comment.id,
+          name: comment.name,
+          post: comment.post.title,
+          comment: comment.comment,
+          created_at: comment.created_at
+        }
+      end
+    end
+    total_comments.sort_by { |c| c[:created_at] }.reverse!
+  end
+
+  def upvote_count
+    upvote_count = 0
+    posts.each { |post| upvote_count += post.upvotes.count.to_i }
+    upvote_count
+  end
 end
