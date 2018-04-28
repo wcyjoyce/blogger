@@ -1,9 +1,10 @@
 <h3>ANALYTICS</h3>
+
 <div class="tabs">
   <% if @user == current_user %>
     <a href="#" class="tab" id="post-tab">POSTS (<%= @user.posts.count %>)</a>
-    <a href="#" class="tab" id="comment-tab">COMMENTS (5)</a>
-    <a href="#" class="tab" id="upvote-tab">UPVOTES (5)</a>
+    <a href="#" class="tab" id="comment-tab">COMMENTS (<%= @user.comment_count %>)</a>
+    <a href="#" class="tab" id="upvote-tab">UPVOTES (<%= @user.upvote_count %>)</a>
   <% else %>
     <a href="#" class="tab" id="post-tab">POSTS (<%= @user.posts.count %>)</a>
     <a href="#" class="tab" id="upvote-tab">UPVOTES (5)</a>
@@ -13,7 +14,13 @@
 <!-- Posts -->
 <div class="analytics chart" id="post-analytics">
   <% if @user.posts.empty? %>
-    <div class="placeholder-message"><%= @user.first_name.capitalize %> has not posted anything yet.</div>
+    <div class="placeholder-message">
+      <% if @user == current_user %>
+        <%= link_to "There are no published posts yet. Would you like to write one now?", new_post_path %>
+      <% else %>
+        <%= @user.first_name.capitalize + " has not posted anything yet." %>
+      <% end %>
+    </div>
   <% else %>
     <%= column_chart @user.posts.group_by_month(:created_at, format: "%b %Y").count, colors: ["gray"] %>
   <% end %>
@@ -21,7 +28,15 @@
 
 <!-- Comments -->
 <div class="analytics" id="comments-analytics">
+  <% if @user == current_user %>
+    <% if @user.posts.empty? %>
+      <div class="placeholder-message"><%= link_to "There are no published posts yet. Would you like to write one now?", new_post_path %></div>
+    <% else %>
 
+      <% line_chart Comment.group(:created_at).sum(:post_id) %>
+
+    <% end %>
+  <% end %>
 </div>
 
 <!-- Upvotes -->
@@ -30,7 +45,10 @@
     <div class="banner">
       <%= link_to post_path(post) do %>
         <div class="banner-title">
-          <h4><%= post.title.upcase %></h4>
+          <div class="banner-upvote">
+            <h4><%= post.title.upcase %></h4>
+            <h5><%= "(" + pluralize(post.upvotes.count, "upvote") + ")" unless post.upvotes.empty? %></h5>
+          </div>
           <h5><%= post.created_at.strftime("%B %e, %Y").upcase %></h5>
         </div>
         <div class="banner-body">
@@ -62,6 +80,13 @@
       event.preventDefault();
       $(".analytics").addClass("hidden")
       $("#post-analytics").removeClass("hidden")
+    });
+
+    const commentAnalytics = document.getElementById("comment-tab");
+    commentAnalytics.addEventListener("click", (event) => {
+      event.preventDefault();
+      $(".analytics").addClass("hidden")
+      $("#comments-analytics").removeClass("hidden")
     });
 
     const upvoteAnalytics = document.getElementById("upvote-tab");
