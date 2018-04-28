@@ -22,4 +22,4 @@
   <% end %>
 </div>
 
-<%= content_for(:title, "Posts Upvoted by " + @user.first_name + " " + @user.last_name) %>
+<%= content_for(:title, "Posts Upvoted by " + @user.full_name.camelize) %>

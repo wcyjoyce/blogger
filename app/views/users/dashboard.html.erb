@@ -18,5 +18,5 @@
 <% if @user == current_user %>
   <%= content_for(:title, "Dashboard") %>
 <% else %>
-  <%= content_for(:title, @user.first_name.capitalize + " " + @user.last_name.capitalize) %>
+  <%= content_for(:title, @user.full_name.camelize) %>
 <% end %>

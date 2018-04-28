@@ -9,7 +9,7 @@
         <div class="relationship-content">
           <div class="relationship-header">
             <div class="relationship-text">
-              <h3><%= link_to user.first_name + " " + user.last_name, dashboard_path(user) %></h3>
+              <h3><%= link_to user.full_name, dashboard_path(user) %></h3>
               <div class="relationship-icons">
                 <% if user.website? %>
                   <div class="relationship-icon"><a href="<%= user.website %>"><i class="fa fa-user-circle" aria-hidden="true"></i></a></div>
@@ -55,4 +55,4 @@
   <% end %>
 </div>
 
-<%= content_for(:title, @user.first_name + " " + @user.last_name + " | " + @title) %>
+<%= content_for(:title, @user.full_name.camelize + " | " + @title) %>

@@ -2,7 +2,7 @@
 <% @disable_sidebar = true %>
 
 <div class="sessions-edit">
-  <h2>Edit Profile - <%= @user.first_name %> <%= @user.last_name %></h2>
+  <h2>Edit Profile - <%= @user.full_name.camelize %></h2>
 
   <div class="sessions">
     <div class="sessions-half">
