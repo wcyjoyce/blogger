@@ -1,6 +1,23 @@
-<!-- Header Stats -->
-<div class="header-stats">
-  <div class="stat">
+<!-- Mobile Header Links -->
+<% if @user == current_user %>
+  <div class="mobile-header-links">
+    <%= link_to edit_user_registration_path, class: "btn" do %>
+      <i class="fa fa-pencil"></i>
+    <% end %>
+    <%= link_to dashboard_path(current_user), class: "btn" do %>
+      <i class="fa fa-list"></i>
+    <% end %>
+    <%= link_to new_post_path, class: "btn" do %>
+      <i class="fa fa-plus"></i>
+    <% end %>
+  </div>
+<% else %>
+  <div class="mobile-header-links"><%= render "relationships/form" %></div>
+<% end %>
+
+<!-- Mobile Header Stats -->
+<div class="header-stats mobile-header-stats">
+  <div class="mobile-stat">
     <% if @user.posts.count > 0 %>
       <%= link_to posts_path do %>
         <div class="stat-label">Posts</div>
@@ -15,7 +32,7 @@
     <div class="stat-label">Drafts</div>
     <div class="stat-number">10</div>
   </div>
-  <div class="stat">
+  <div class="mobile-stat">
     <% if @user.following.count > 0 %>
       <%= link_to following_path(@user) do %>
         <div class="stat-label">Following</div>
@@ -26,7 +43,7 @@
       <div class="stat-number"><%= @user.following.count %></div>
     <% end %>
   </div>
-  <div class="stat">
+  <div class="mobile-stat">
     <% if @user.followers.count > 0 %>
       <%= link_to followers_path(@user) do %>
         <div class="stat-label">Followers</div>
@@ -37,7 +54,7 @@
       <div class="stat-number"><%= @user.followers.count %></div>
     <% end %>
   </div>
-  <div class="stat">
+  <div class="mobile-stat">
     <% if @user.upvotes.count > 0 %>
       <%= link_to upvotes_path do %>
         <div class="stat-label">Upvotes</div>
@@ -50,13 +67,3 @@
   </div>
 </div>
 
-<!-- Header Links -->
-<% if @user == current_user %>
-  <div class="header-links">
-    <%= link_to "Edit Profile", edit_user_registration_path, class: "btn" %>
-    <%= link_to "Newsfeed", dashboard_path(current_user), class: "btn" %>
-    <%= link_to "Add New Post", new_post_path, class: "btn" %>
-  </div>
-<% else %>
-  <div class="header-links"><%= render "relationships/form" %></div>
-<% end %>

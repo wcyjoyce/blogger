@@ -1,6 +1,11 @@
 <div class="container">
   <h1><%= @user == current_user ? "DASHBOARD" : @user.first_name + " " + @user.last_name %></h1>
-  <div class="dashboard-header"><%= render "header" %></div>
+
+  <!-- Header -->
+  <div class="dashboard-header hidden-xs hidden-sm"><%= render "header" %></div> <!-- Desktop Header -->
+  <div class="mobile-dashboard-header hidden-lg hidden-md"><%= render "header-mobile" %></div> <!-- Mobile Header -->
+
+  <!-- Dashboard -->
   <div class="dashboard-grid">
     <% if @user == current_user %>
       <div class="dashboard-box left"><%= render "activity" %></div> <!-- Activity Stream -->
