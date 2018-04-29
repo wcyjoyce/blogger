@@ -1,0 +1,64 @@
+.home {
+  width: 100vw;
+}
+
+.splash {
+  text-align: center;
+  padding: 50px 0px;
+
+  h1 {
+    font-size: 60px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 7.5px;
+    margin: 0px;
+    padding: 25px 0px;
+  }
+
+  h2 {
+    font-size: 17.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0px;
+    padding: 12.5px 0px;
+  }
+}
+
+.splash-links {
+  padding: 20px 0px;
+}
+
+.feed {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0px;
+
+  .feed-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feed-line {
+    width: 50px;
+    border-top: 2px solid $post;
+    margin: 0px 15px;
+  }
+
+  h1 {
+    font-size: 25px;
+    color: $post;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bolder;
+    margin: 12.5px 0px;
+  }
+
+  h2 {
+    font-size: 17.5px;
+    color: $dark-gray;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0px;
+  }
+}

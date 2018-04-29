@@ -1,0 +1,50 @@
+.col-xs-12, .col-sm-6, .col-md-4, .col-lg-4 {
+  padding: 0px;
+  margin: 0px;
+}
+
+.feed-tile {
+  background: $light-gray;
+  color: $post;
+  padding: 10px;
+  margin: 5px;
+  height: 150px;
+  text-align: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  a {
+    text-decoration: none;
+    color: $post;
+  }
+
+  &:hover {
+    background: white;
+  }
+
+  h1 {
+    padding: 5px 0px;
+    margin: 0px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+
+  h2 {
+    padding: 5px 0px;
+    margin: 0px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0px;
+    padding: 5px 0px;
+    font-size: 14px;
+    color: $dark-gray;
+    line-height: 1.25;
+  }
+}

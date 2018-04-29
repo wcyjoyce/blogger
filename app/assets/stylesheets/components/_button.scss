@@ -26,3 +26,22 @@
     border: 1px solid $wine !important;
   }
 }
+
+.btn-splash {
+  font-family: "Lato", "sans-serif";
+  font-weight: bolder;
+  font-size: 16px;
+  color: $dark-gray;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2.5px solid $dark-gray;
+  margin: 10px;
+  padding: 7.5px 12.5px;
+
+  &:hover {
+    text-decoration: none;
+    color: $gray;
+    border: 2.5px solid $gray;
+    transition: all 0.3s ease;
+  }
+}
