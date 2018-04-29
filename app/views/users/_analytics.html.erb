@@ -12,7 +12,7 @@
 </div>
 
 <!-- Posts -->
-<div class="analytics chart" id="post-analytics">
+<div class="analytics" id="post-analytics">
   <% if @user.posts.empty? %>
     <div class="placeholder-message">
       <% if @user == current_user %>
@@ -22,12 +22,14 @@
       <% end %>
     </div>
   <% else %>
-    <%= column_chart @user.posts.group_by_month(:created_at, format: "%b %Y").count, colors: ["gray"] %>
+    <div class="chart">
+      <%= column_chart @user.posts.group_by_month(:created_at, format: "%b %Y").count, colors: ["gray"] %>
+    </div>
   <% end %>
 </div>
 
 <!-- Comments -->
-<div class="analytics" id="comments-analytics">
+<div class="analytics hidden" id="comments-analytics">
   <% if @user == current_user %>
     <% if @user.posts.empty? %>
       <div class="placeholder-message"><%= link_to "There are no published posts yet. Would you like to write one now?", new_post_path %></div>
