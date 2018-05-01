@@ -2,7 +2,7 @@
 
 Typeprint is my own attempt at creating a blogging platform, written in pure Ruby without any frameworks or testing libraries. This project is inspired by my own desire to start my own blog – which I've literally done so now, but not so much in terms of content.
 
-Please feel free to check it out: http://typeprint.herokuapp.com.
+Feel free to check it out at http://typeprint.herokuapp.com.
 
 
 ## Built With
