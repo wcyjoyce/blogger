@@ -1,4 +1,4 @@
-<h3>POSTS</h3>
+<h3><%= link_to "POSTS", posts_path %></h3>
 <div class="tabs">
   <% if @user == current_user %>
     <a href="#" class="tab" id="published-tab">PUBLISHED (<%= @user.posts.count %>)</a>
