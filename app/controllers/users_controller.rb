@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def newsfeed
-    @posts = Post.all
+    @users = @user.following
     authorize @user
   end
 
