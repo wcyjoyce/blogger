@@ -11,4 +11,4 @@ Please feel free to check it out: http://typeprint.herokuapp.com.
 
 ## Contact
 
-If you have any issues, feedback or general comments, please feel free to [drop a message](http://typeprint.herokuapp.com/pages/about) or [send me an email](mailto: wcyjoyce.hk@gmail.com).
+If you have any issues, feedback or general comments, please feel free to [drop a message](http://typeprint.herokuapp.com/pages/about) or [send me an email](mailto:wcyjoyce.hk@gmail.com).
