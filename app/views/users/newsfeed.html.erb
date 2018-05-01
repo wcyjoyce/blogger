@@ -1,4 +1,5 @@
 <div class="posts">
+  <h1>NEWSFEED</h1>
   <% @user.activity.each do |post| %>
     <div class="post">
       <h3><%= link_to post[:title], post_path(post) %></h3>

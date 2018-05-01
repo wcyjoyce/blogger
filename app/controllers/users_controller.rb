@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def newsfeed
     authorize @user
+    @disable_sidebar = true
   end
 
   def following
