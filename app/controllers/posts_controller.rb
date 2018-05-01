@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @user = current_user
     if params[:tag]
       @posts = policy_scope(Post).tagged_with(params[:tag]).order(created_at: :desc)
       @title = params[:tag]

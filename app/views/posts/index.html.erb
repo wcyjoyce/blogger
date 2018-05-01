@@ -1,5 +1,5 @@
 <div class="posts">
-  <% if @posts.empty? %>
+  <% if @user.posts.empty? %>
     <div class="post">
       <% if policy(post).edit? %>
         <h3><%= link_to "There are no published posts yet. Would you like to write one now?", new_post_path %></h3>
@@ -11,7 +11,7 @@
     <% if params[:tag] %>
       <h1>All Posts Tagged With "<%= @title %>"</h1>
     <% end %>
-    <% @posts.each do |post| %>
+    <% @user.posts.each do |post| %>
       <div class="post">
         <h3><%= link_to post.title, post_path(post) %></h3>
         <h6><%= post.created_at.strftime("%B %e, %Y") %></h6>
