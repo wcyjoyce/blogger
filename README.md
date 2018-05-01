@@ -5,12 +5,12 @@ Typeprint is my own attempt at creating a blogging platform, written in pure Rub
 Please feel free to check it out: http://typeprint.herokuapp.com.
 
 
-### Built With
+## Built With
 
 * [Ruby on Rails](http://rubyonrails.org) - the web framework used
 * [Chartkick](https://www.chartkick.com) - used to generate JavaScript charts
 
 
-### Contact
+## Contact
 
 If you have any issues, feedback or general comments, please feel free to [drop a message](http://typeprint.herokuapp.com/pages/about) or [send me an email](mailto:wcyjoyce.hk@gmail.com).
