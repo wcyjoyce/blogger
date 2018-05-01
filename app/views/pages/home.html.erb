@@ -11,33 +11,29 @@
   </div>
 <% end %>
 
-
 <!-- Explore Feed -->
 <div class="feed">
   <div class="feed-title">
-    <div class="feed-line"></div>
-    <h1>EXPLORE</h1>
-    <div class="feed-line"></div>
+    <div class="feed-line"></div><h1>EXPLORE</h1><div class="feed-line"></div>
   </div>
   <h2>Discover what's happening on Typeprint</h2>
-</div>
-
-<div class="feed-tiles">
-  <% @posts.order(created_at: :desc).first(6).each do |post| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-      <div class="feed-tile">
-        <div class="tile-content">
-          <h1><%= post.title %></h1>
-          <h2><%= post.user.full_name %> | <%= post.created_at.strftime("%B %e, %Y") %></h2>
-          <p><%= post.content.chars.count > 200 ? post.content.chars.first(200).join + "..." : post.content %></p>
+  <div class="feed-tiles">
+    <% @posts.order(created_at: :desc).first(6).each do |post| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="feed-tile">
+          <div class="tile-content">
+            <h1><%= post.title %></h1>
+            <h2><%= post.user.full_name %> | <%= post.created_at.strftime("%B %e, %Y") %></h2>
+            <p><%= post.content.chars.count > 200 ? post.content.chars.first(200).join + "..." : post.content %></p>
+          </div>
+          <%= link_to post_path(post), class: "tile-link" do %>
+            <h2><i class="fa fa-thumbs-up"></i><%= post.upvotes.count %></h2>
+            <h2><i class="fa fa-comment"></i><%= post.comments.count %></h2>
+          <% end %>
         </div>
-        <%= link_to post_path(post), class: "tile-link" do %>
-          <h2><i class="fa fa-thumbs-up"></i><%= post.upvotes.count %></h2>
-          <h2><i class="fa fa-comment"></i><%= post.comments.count %></h2>
-        <% end %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <%= content_for(:title, "Typeprint") %>
