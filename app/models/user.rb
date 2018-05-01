@@ -43,7 +43,8 @@ class User < ApplicationRecord
           name: post.user.full_name,
           title: post.title,
           content: post.content,
-          created_at: post.created_at
+          created_at: post.created_at,
+          all_tags: post.all_tags
         }
       end
     end
