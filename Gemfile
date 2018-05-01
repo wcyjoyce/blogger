@@ -29,6 +29,9 @@ gem 'highcharts-rails'
 gem 'groupdate'
 gem 'active_median'
 
+# Page loading
+gem "pace-rails"
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
