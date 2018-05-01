@@ -26,12 +26,14 @@
   <% @posts.order(created_at: :desc).first(6).each do |post| %>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="feed-tile">
-        <%= link_to post_path(post) do %>
-          <div class="tile-content">
-            <h1><%= post.title %></h1>
-            <h2><%= post.user.full_name %> | <%= post.created_at.strftime("%B %e, %Y") %></h2>
-            <p><%= post.content.chars.count > 200 ? post.content.chars.first(200).join + "..." : post.content %></p>
-          </div>
+        <div class="tile-content">
+          <h1><%= post.title %></h1>
+          <h2><%= post.user.full_name %> | <%= post.created_at.strftime("%B %e, %Y") %></h2>
+          <p><%= post.content.chars.count > 200 ? post.content.chars.first(200).join + "..." : post.content %></p>
+        </div>
+        <%= link_to post_path(post), class: "tile-link" do %>
+          <h2><i class="fa fa-thumbs-up"></i><%= post.upvotes.count %></h2>
+          <h2><i class="fa fa-comment"></i><%= post.comments.count %></h2>
         <% end %>
       </div>
     </div>
