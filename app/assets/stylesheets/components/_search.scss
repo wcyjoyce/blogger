@@ -1,6 +1,8 @@
 .sidebar-search {
   padding: 20px 0px;
+}
 
+.sidebar-search, .feed {
   .form-group {
     font-size: 13px;
     text-align: center;
@@ -31,4 +33,8 @@
       transition: all 0.3s ease;
     }
   }
+}
+
+.feed .form-group {
+  margin: 15px 0px;
 }

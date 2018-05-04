@@ -21,6 +21,26 @@
     <div class="feed-line"></div><h1>EXPLORE</h1><div class="feed-line"></div>
   </div>
   <h2>Discover what's happening on Typeprint</h2>
+
+<div class="explore hidden">
+  <%= form_tag(posts_path, method: :get) do %>
+    <%= text_field_tag :search, nil, placeholder: "SEARCH", class: "form-group" %>
+    <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+  <% end %>
+  <div class="tag-cloud">
+    <% cloud = [] %>
+    <% unless @posts.nil? %>
+      <% @posts.each do |post| %>
+        <% post.tags.each do |tag| %>
+          <% cloud << tag.name %>
+        <% end %>
+      <% end %>
+      <% cloud = cloud.sort.uniq %>
+      <div class="post-tags"><%= raw tag_links(cloud.join(", ")) %></div>
+    <% end %>
+  </div>
+</div>
+
   <div class="feed-tiles">
     <% @posts.order(created_at: :desc).first(6).each do |post| %>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
