@@ -9,6 +9,10 @@
       <%= link_to "Log In", new_user_session_path, class: "btn-splash" %>
     </div>
   </div>
+<% else %>
+  <div class="splash">
+    <h1>WELCOME BACK, <%= @user.first_name %></h1>
+  </div>
 <% end %>
 
 <!-- Explore Feed -->

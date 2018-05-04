@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
     @disable_sidebar = true
     @posts = Post.all
+    @user = current_user
   end
 
   def about
