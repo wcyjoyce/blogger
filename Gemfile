@@ -32,6 +32,9 @@ gem 'active_median'
 # Page loading
 gem "pace-rails"
 
+# Weather
+gem "open-weather"
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
