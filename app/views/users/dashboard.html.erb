@@ -8,26 +8,14 @@
   <!-- Dashboard -->
   <div class="dashboard-grid hidden-xs hidden-sm">
     <!-- Dashboard: Desktop -->
-    <% if @user == current_user %>
-      <div class="dashboard-box left"><%= render "activity" %></div> <!-- Activity Stream -->
-      <div class="dashboard-box right"><%= render "analytics" %></div> <!-- Analytics -->
-      <div class="dashboard-box left"><%= render "comments" %></div> <!-- Comments -->
-      <div class="dashboard-box right"><%= render "posts" %></div> <!-- Posts -->
-    <% else %>
-      <div class="dashboard-box left"><%= render "analytics" %></div> <!-- Analytics -->
-      <div class="dashboard-box right"><%= render "posts" %></div> <!-- Posts -->
-    <% end %>
+    <div class="dashboard-box left"><%= render "activity" %></div> <!-- Activity Stream -->
+    <div class="dashboard-box right"><%= render "analytics" %></div> <!-- Analytics -->
   </div>
 
   <div class="mobile-dashboard-grid hidden-lg hidden-md">
     <!-- Dashboard: Mobile -->
-    <% if @user == current_user %>
-      <div class="dashboard-box"><%= render "activity" %></div> <!-- Activity Stream -->
-      <div class="dashboard-box"><%= render "comments" %></div> <!-- Comments -->
-      <div class="dashboard-box"><%= render "posts" %></div> <!-- Posts -->
-    <% else %>
-      <div class="dashboard-box"><%= render "posts" %></div> <!-- Posts -->
-    <% end %>
+    <div class="dashboard-box"><%= render "activity" %></div> <!-- Activity Stream -->
+    <div class="dashboard-box"><%= render "posts" %></div> <!-- Posts -->
   </div>
 </div>
 

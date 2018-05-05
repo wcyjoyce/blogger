@@ -1,25 +1,74 @@
 <h3><%= link_to "ACTIVITY FEED", newsfeed_path(@user) %></h3>
+<div class="tabs hidden-xs hidden-sm">
+  <% if @user == current_user %>
+    <a href="#" class="tab" id="activity-tab">NEWSFEED</a>
+    <a href="#" class="tab" id="post-tab">YOUR POSTS (<%= @user.posts.count %>)</a>
+  <% end %>
+</div>
 
-<% if @user.following.empty? %>
-  <div class="placeholder-message">
-    <%= @user == current_user ? "You are not following anyone yet." : @user.first_name.capitalize + " has not followed anyone yet." %>
-  </div>
-<% else %>
-  <div class="banners">
-    <% @user.activity.first(4).each do |post| %>
+<!-- Newsfeed -->
+<div class="banners post-banners" id="activity-feed">
+  <% if @user.following.empty? %>
+    <div class="placeholder-message">
+      <%= @user == current_user ? "You are not following anyone yet." : @user.first_name.capitalize + " has not followed anyone yet." %>
+    </div>
+  <% else %>
+    <div class="banners">
+      <% @user.activity.first(4).each do |post| %>
+        <div class="banner">
+          <%= link_to post_path(post) do %>
+            <div class="banner-title">
+              <h4><%= post[:title].upcase %></h4>
+              <h5><%= post[:created_at] %></h5>
+            </div>
+            <div class="banner-body">
+              <div class="banner-creator">By <%= link_to post[:name], dashboard_path(post[:user]) %></div>
+              <div class="banner-content"><%= post[:content].chars.count > 80 ? post[:content].first(80) + "..." : post[:content] %></div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <%= link_to "See more...", newsfeed_path(@user), class: "banner-footer" if @user.activity.count > 4 %>
+    </div>
+  <% end %>
+</div>
+
+<!-- Posts -->
+<div class="banners post-banners hidden" id="published-posts">
+  <% if @user.posts.empty? %>
+    <div class="placeholder-message">There are no published posts yet.</div>
+  <% else %>
+    <% @user.posts.order(created_at: :desc).first(5).each do |post| %>
       <div class="banner">
         <%= link_to post_path(post) do %>
           <div class="banner-title">
-            <h4><%= post[:title].upcase %></h4>
-            <h5><%= post[:created_at] %></h5>
+            <h4><%= post.title.upcase %></h4>
+            <h5><%= post.time %></h5>
           </div>
-          <div class="banner-body">
-            <div class="banner-creator">By <%= link_to post[:name], dashboard_path(post[:user]) %></div>
-            <div class="banner-content"><%= post[:content].chars.count > 80 ? post[:content].first(80) + "..." : post[:content] %></div>
+          <div class="banner-body hidden-xs hidden-sm">
+            <%= post.content.chars.count > 80 ? post.content.first(80) + "..." : post.content %>
           </div>
         <% end %>
       </div>
     <% end %>
-    <%= link_to "See more...", newsfeed_path(@user), class: "banner-footer" if @user.activity.count > 4 %>
-  </div>
+    <%= link_to "And " + (@user.posts.count - 5).to_s + " more...", posts_path, class: "banner-footer" if @user.posts.count > 5 %>
+  <% end %>
+</div>
+
+<% content_for(:after_js) do %>
+  <script>
+    const activityFeed = document.getElementById("activity-tab");
+    activityFeed.addEventListener("click", (event) => {
+      event.preventDefault();
+      $(".post-banners").addClass("hidden")
+      $("#activity-feed").removeClass("hidden")
+    });
+
+    const publishedPosts = document.getElementById("post-tab");
+    publishedPosts.addEventListener("click", (event) => {
+      event.preventDefault();
+      $(".post-banners").addClass("hidden")
+      $("#published-posts").removeClass("hidden")
+    });
+  </script>
 <% end %>

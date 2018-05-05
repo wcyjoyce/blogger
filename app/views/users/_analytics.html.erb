@@ -1,6 +1,6 @@
 <h3>ANALYTICS</h3>
 
-<div class="tabs">
+<div class="tabs hidden-xs hidden-sm">
   <% if @user == current_user %>
     <a href="#" class="tab" id="post-tab">POSTS (<%= @user.posts.count %>)</a>
     <a href="#" class="tab" id="comment-tab">COMMENTS (<%= @user.comment_count %>)</a>
