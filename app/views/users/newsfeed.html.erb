@@ -3,7 +3,7 @@
   <% @user.activity.each do |post| %>
     <div class="post">
       <h3><%= link_to post[:title], post_path(post) %></h3>
-      <h6><%= post[:created_at] %></h6>
+      <h6><%= post[:name] %> | <%= post[:created_at] %></h6>
       <p><%= post[:content] %></p>
       <div class="post-tags"><%= raw tag_links(post[:all_tags]) %></div>
     </div>
