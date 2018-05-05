@@ -18,7 +18,7 @@
             <h4><%= post.title.upcase %></h4>
             <h5><%= post.time %></h5>
           </div>
-          <div class="banner-body">
+          <div class="banner-body mobile">
             <%= post.content.chars.count > 80 ? post.content.first(80) + "..." : post.content %>
           </div>
         <% end %>
