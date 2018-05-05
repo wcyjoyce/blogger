@@ -6,7 +6,7 @@
   </div>
 <% else %>
   <div class="banners">
-    <% @user.activity.first(3).each do |post| %>
+    <% @user.activity.first(4).each do |post| %>
       <div class="banner">
         <%= link_to post_path(post) do %>
           <div class="banner-title">
@@ -24,6 +24,6 @@
         <% end %>
       </div>
     <% end %>
-    <%= link_to "See more...", newsfeed_path(@user), class: "banner-footer" %>
+    <%= link_to "See more...", newsfeed_path(@user), class: "banner-footer" if @user.activity.count > 4 %>
   </div>
 <% end %>

@@ -4,7 +4,7 @@
   <div class="placeholder-message">There are no comments on your posts yet.</div>
 <% else %>
   <div class="banners">
-    <% @user.total_comments.first(3).each do |comment| %>
+    <% @user.total_comments.first(4).each do |comment| %>
       <div class="banner">
         <div class="banner-title">
           <h4><%= comment[:post] %></h4>
@@ -16,6 +16,6 @@
         </div>
       </div>
     <% end %>
-    <div class="banner-footer"><%= "And " + (@user.total_comments.count - 3).to_s + " more..." if @user.total_comments.count > 3 %></div>
+    <div class="banner-footer"><%= "And " + (@user.total_comments.count - 4).to_s + " more..." if @user.total_comments.count > 4 %></div>
   </div>
 <% end %>
