@@ -1,22 +1,16 @@
 <div class="posts">
   <h1>Upvotes</h1>
   <% if @user.upvotes.empty? %>
-  <div class="post">
-    <h3>You have not upvoted any posts yet.</h3>
-  </div>
+  <div class="post"><h3>You have not upvoted any posts yet.</h3></div>
   <% else %>
     <% @user.upvotes.each do |upvote| %>
       <div class="post">
         <h3><%= link_to upvote.post.title, post_path(upvote.post) %></h3>
-        <div class="post-header-flex">
-          <h6><%= upvote.post.time %></h6>
-          <h6>•</h6>
-          <p class="post-name"><%= link_to upvote.post.user.first_name, dashboard_path(upvote.post.user) %></p>
-        </div>
+        <h6><%= link_to upvote.post.user.full_name, dashboard_path(upvote.post.user) %> | <%= upvote.post.time %></h6>
         <p><%= upvote.post.content %></p>
-      </div>
-      <div class="post-tags">
-        <%= raw tag_links(upvote.post.all_tags) %>
+        <div class="post-tags">
+          <%= raw tag_links(upvote.post.all_tags) %>
+        </div>
       </div>
     <% end %>
   <% end %>
