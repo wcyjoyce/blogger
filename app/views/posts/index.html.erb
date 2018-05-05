@@ -33,7 +33,7 @@
         <div class="post-links hidden-lg hidden-md"> <!-- Links: Mobile -->
           <% if policy(post).edit? %>
             <%= link_to post_path(post), class: "btn" do %>
-              <i class="fa fa-pencil"></i> <%= post.upvotes.count.to_s %>
+              <i class="fa fa-thumbs-up"></i> <%= post.upvotes.count.to_s %>
             <% end %>
             <%= link_to post_path(post), class: "btn" do %>
               <i class="fa fa-comment"></i> <%= post.comments.count.to_s %>
