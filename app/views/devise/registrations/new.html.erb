@@ -1,6 +1,6 @@
 <div class="sessions">
 
-  <div class="sessions-half">
+  <div class="sessions-half hidden-xs hidden-sm">
     <h2>Log In</h2>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -23,7 +23,7 @@
         <%= f.input :first_name, required: true, label: false, placeholder: "FIRST NAME" %>
         <%= f.input :last_name, required: true, label: false, placeholder: "LAST NAME" %>
         <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "EMAIL" %>
-        <%= f.input :password, required: true, label: false, placeholder: "PASSWORD (6 CHARACTERS MINIMUM)", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        <%= f.input :password, required: true, label: false, placeholder: "PASSWORD (6 CHARACTERS MINIMUM)" %>
         <%= f.input :password_confirmation, required: true, label: false, placeholder: "CONFIRM PASSWORD" %>
       </div>
       <div class="form-actions">

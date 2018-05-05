@@ -26,6 +26,13 @@
   }
 }
 
+@media (max-width: 992px){
+  .sessions-half {
+    width: 100%;
+    padding: 0px !important;
+  }
+}
+
 .form-inputs {
   .form-control {
     font-size: 12px;
