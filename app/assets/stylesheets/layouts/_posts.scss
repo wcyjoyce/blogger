@@ -23,7 +23,7 @@
   }
 
   h6 {
-    font-size: 14px;
+    font-size: 13px;
     font-family: "Source Sans Pro", "sans-serif";
     text-transform: uppercase;
   }
@@ -41,6 +41,7 @@
 
     &:hover {
       color: $dark-gray;
+      font-weight: bolder;
       transition: all 0.3s ease;
     }
   }
