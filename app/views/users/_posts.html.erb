@@ -1,5 +1,5 @@
 <h3><%= link_to "POSTS", posts_path %></h3>
-<div class="mobile tabs">
+<div class="tabs hidden-xs hidden-sm">
   <% if @user == current_user %>
     <a href="#" class="tab" id="published-tab">PUBLISHED (<%= @user.posts.count %>)</a>
     <a href="#" class="tab" id="draft-tab">DRAFTS (5)</a>
@@ -18,7 +18,7 @@
             <h4><%= post.title.upcase %></h4>
             <h5><%= post.time %></h5>
           </div>
-          <div class="banner-body mobile">
+          <div class="banner-body hidden-xs hidden-sm">
             <%= post.content.chars.count > 80 ? post.content.first(80) + "..." : post.content %>
           </div>
         <% end %>
