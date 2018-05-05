@@ -1,6 +1,5 @@
 .relationships {
   padding: 0px 7.5px;
-  width: 100%;
 
   h1 {
     font-size: 30px;
@@ -9,6 +8,16 @@
     color: $post;
     margin-top: 12.5px;
     text-transform: uppercase;
+  }
+
+  h2, h2 a {
+    text-decoration: none;
+    color: $gray;
+    font-size: 22px;
+    letter-spacing: 2.5px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin: 12.5px 0px;
   }
 }
 
