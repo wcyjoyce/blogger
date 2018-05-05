@@ -27,6 +27,10 @@ class Post < ApplicationRecord
     Tag.find_by_name!(name).posts
   end
 
+  def time
+    created_at.strftime("%B %e, %Y")
+  end
+
   # Search
   include PgSearch
 
