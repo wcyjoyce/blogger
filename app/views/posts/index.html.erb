@@ -19,7 +19,7 @@
         <div class="post-tags">
           <%= raw tag_links(post.all_tags) %>
         </div>
-        <div class="post-links">
+        <div class="post-links hidden-xs hidden-sm"> <!-- Links: Desktop -->
           <% if policy(post).edit? %>
             <%= link_to "UPVOTES (" + post.upvotes.count.to_s + ")", post_path(post), class: "btn" %>
             <%= link_to "COMMENTS (" + post.comments.count.to_s + ")", post_path(post), class: "btn" %>
