@@ -2,7 +2,7 @@
 <div class="tabs hidden-xs hidden-sm">
   <% if @user == current_user %>
     <a href="#" class="tab" id="activity-tab">NEWSFEED</a>
-    <a href="#" class="tab" id="post-tab">YOUR POSTS (<%= @user.posts.count %>)</a>
+    <a href="#" class="tab" id="published-tab">YOUR POSTS (<%= @user.posts.count %>)</a>
   <% end %>
 </div>
 
@@ -64,7 +64,7 @@
       $("#activity-feed").removeClass("hidden")
     });
 
-    const publishedPosts = document.getElementById("post-tab");
+    const publishedPosts = document.getElementById("published-tab");
     publishedPosts.addEventListener("click", (event) => {
       event.preventDefault();
       $(".post-banners").addClass("hidden")

@@ -10,7 +10,7 @@
   border: 1px solid $post;
   margin: 10px 0px;
   padding: 15px;
-  max-height: 410px;
+  min-height: 410px;
 
   h3, h3 a {
     text-decoration: none;
@@ -78,4 +78,10 @@
 
 .mobile-dashboard-grid {
   margin-top: 12.5px;
+}
+
+@media (max-width: 992px){
+  .dashboard-box {
+    min-height: 10px !important;
+  }
 }
