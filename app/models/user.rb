@@ -43,7 +43,7 @@ class User < ApplicationRecord
           name: post.user.full_name,
           title: post.title,
           content: post.content,
-          created_at: post.created_at,
+          created_at: post.created_at.strftime("%B %e, %Y"),
           all_tags: post.all_tags
         }
       end
@@ -60,7 +60,7 @@ class User < ApplicationRecord
           name: comment.name,
           post: comment.post.title,
           comment: comment.comment,
-          created_at: comment.created_at
+          created_at: comment.created_at.strftime("%B %e, %Y")
         }
       end
     end

@@ -48,7 +48,7 @@
             <h4><%= post.title.upcase %></h4>
             <h5><%= "(" + pluralize(post.upvotes.count, "upvote") + ")" unless post.upvotes.empty? %></h5>
           </div>
-          <h5><%= post.created_at.strftime("%B %e, %Y").upcase %></h5>
+          <h5><%= post.time %></h5>
         </div>
         <div class="banner-body">
           <% if post.upvotes.empty? %>

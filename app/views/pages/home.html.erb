@@ -47,7 +47,7 @@
         <div class="feed-tile">
           <div class="tile-content">
             <h1><%= post.title %></h1>
-            <h2><%= post.user.full_name %> | <%= post.created_at.strftime("%B %e, %Y") %></h2>
+            <h2><%= post.user.full_name %> | <%= post.time %></h2>
             <p><%= post.content.chars.count > 200 ? post.content.chars.first(200).join + "..." : post.content %></p>
           </div>
           <%= link_to post_path(post), class: "tile-link" do %>
