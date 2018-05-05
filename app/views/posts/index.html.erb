@@ -30,6 +30,23 @@
             <%= link_to "COMMENTS (" + post.comments.count.to_s + ")", post_path(post), class: "btn" %>
           <% end %>
         </div>
+        <div class="post-links hidden-lg hidden-md"> <!-- Links: Mobile -->
+          <% if policy(post).edit? %>
+            <%= link_to post_path(post), class: "btn" do %>
+              <i class="fa fa-pencil"></i> <%= post.upvotes.count.to_s %>
+            <% end %>
+            <%= link_to post_path(post), class: "btn" do %>
+              <i class="fa fa-comment"></i> <%= post.comments.count.to_s %>
+            <% end %>
+            <%= link_to edit_post_path(post), class: "btn" do %>
+              <i class="fa fa-pencil"></i> EDIT
+            <% end %>
+            <%= link_to post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this post?"}, class: "btn" do %>
+              <i class="fa fa-trash"></i> DELETE
+            <% end %>
+          <% else %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   <% end %>
