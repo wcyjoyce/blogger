@@ -1,7 +1,7 @@
-<div class="show">
+<div class="show show-mobile">
   <div class="post-text">
     <h1><%= @post.title.upcase %></h1>
-    <h6><%= @post.time %></h6>
+    <h6><%= link_to @post.user.full_name, dashboard_path(@post.user) %> - <%= @post.time %></h6>
     <p><%= @post.content %></p>
   </div>
   <div class="post-tags">

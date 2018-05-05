@@ -12,13 +12,23 @@
   }
 
   h6 {
-    font-size: 14px;
+    font-size: 13px;
     font-family: "Source Sans Pro", "sans-serif";
     text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+      color: $gray;
+      font-weight: bolder;
+
+      &:hover {
+        color: $post;
+      }
+    }
   }
 
   p {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 0px;
     color: $post;
     text-align: justify;
@@ -28,4 +38,10 @@
 .post-image {
   width: 100%;
   margin-bottom: 15px;
+}
+
+@media (max-width: 992px){
+  .show-mobile {
+    padding-left: 0px !important;
+  }
 }
