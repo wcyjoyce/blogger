@@ -6,7 +6,7 @@
     <% @user.upvotes.each do |upvote| %>
       <div class="post">
         <h3><%= link_to upvote.post.title, post_path(upvote.post) %></h3>
-        <h6><%= link_to upvote.post.user.full_name, dashboard_path(upvote.post.user) %> | <%= upvote.post.time %></h6>
+        <h6><%= link_to upvote.post.user.full_name, dashboard_path(upvote.post.user) %> - <%= upvote.post.time %></h6>
         <p><%= upvote.post.content %></p>
         <div class="post-tags">
           <%= raw tag_links(upvote.post.all_tags) %>
