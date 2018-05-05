@@ -23,11 +23,9 @@
     <!-- Dashboard: Mobile -->
     <% if @user == current_user %>
       <div class="dashboard-box"><%= render "activity" %></div> <!-- Activity Stream -->
-      <div class="dashboard-box"><%= render "analytics" %></div> <!-- Analytics -->
       <div class="dashboard-box"><%= render "comments" %></div> <!-- Comments -->
       <div class="dashboard-box"><%= render "posts" %></div> <!-- Posts -->
     <% else %>
-      <div class="dashboard-box"><%= render "analytics" %></div> <!-- Analytics -->
       <div class="dashboard-box"><%= render "posts" %></div> <!-- Posts -->
     <% end %>
   </div>

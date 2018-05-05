@@ -12,7 +12,7 @@
         </div>
         <div class="banner-body">
           <div class="banner-creator">By <%= comment[:name] %></div>
-          <%= comment[:comment].chars.count > 80 ? comment[:comment].chars.first(80).join + "..." : comment[:comment] %>
+          <div class="banner-content"><%= comment[:comment].chars.count > 80 ? comment[:comment].chars.first(80).join + "..." : comment[:comment] %></div>
         </div>
       </div>
     <% end %>

@@ -14,12 +14,8 @@
             <h5><%= post[:created_at] %></h5>
           </div>
           <div class="banner-body">
-            <div class="banner-creator">
-              By <%= link_to dashboard_path(post[:user]) do %>
-                <%= post[:name] %>
-              <% end %>
-            </div>
-            <%= post[:content].chars.count > 80 ? post[:content].first(80) + "..." : post[:content] %>
+            <div class="banner-creator">By <%= link_to post[:name], dashboard_path(post[:user]) %></div>
+            <div class="banner-content"><%= post[:content].chars.count > 80 ? post[:content].first(80) + "..." : post[:content] %></div>
           </div>
         <% end %>
       </div>
