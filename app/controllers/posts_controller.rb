@@ -5,12 +5,12 @@ class PostsController < ApplicationController
   def index
     @user = current_user
     if params[:tag]
-      @posts = policy_scope(Post).tagged_with(params[:tag]).order(created_at: :desc)
+      @user.posts = policy_scope(Post).tagged_with(params[:tag]).order(created_at: :desc)
       @title = params[:tag]
     elsif params[:search].present?
-      @posts = policy_scope(Post).order(created_at: :desc).global_search(params[:search])
+      @user.posts = policy_scope(Post).order(created_at: :desc).global_search(params[:search])
     else
-      @posts = policy_scope(Post).order(created_at: :desc)
+      @user.posts = policy_scope(Post).order(created_at: :desc)
     end
   end
 
