@@ -14,7 +14,7 @@
     <% @user.posts.each do |post| %>
       <div class="post">
         <h3><%= link_to post.title, post_path(post) %></h3>
-        <h6><%= link_to post.user.full_name, dashboard_path(@user) %> - <%= post.time %></h6>
+        <h6><strong><%= link_to post.user.full_name, dashboard_path(@user) %></strong> - <%= post.time %></h6>
         <p><%= post.content %></p>
         <div class="post-tags">
           <%= raw tag_links(post.all_tags) %>
