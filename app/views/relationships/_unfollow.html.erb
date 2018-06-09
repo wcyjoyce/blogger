@@ -2,7 +2,8 @@
   <% unless current_user.active_relationships.find_by(following_id: @user.id).nil? %>
   <%= form_for(current_user.active_relationships.find_by(following_id: @user.id),
                html: { method: :delete }) do |f| %>
-    <%= f.submit "Following", class: "btn following" %>
+    <%= f.submit "Following", class: "btn following hidden-xs hidden-sm" %>
+    <%= f.submit "+", class: "btn following hidden-lg hidden-md" %>
   <% end %>
 <% end %>
 <% end %>
