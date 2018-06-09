@@ -1,16 +1,21 @@
 <div class="relationships">
   <% unless @users.empty? %>
     <h2><%= link_to @user.full_name, dashboard_path(@user) %></h2>
-    <h1><%= @title %> (<%= @users.count %>)</h1>
+    <h1 class="hidden-xs hidden-sm"><%= @title %> (<%= @users.count %>)</h1>
+    <h1 class="hidden-md hidden-lg"><%= @title %></h1>
     <% @users.each do |user| %>
       <div class="relationship">
         <%= link_to dashboard_path(user) do %>
           <div class="relationship-avatar"></div>
         <% end %>
+
         <div class="relationship-content">
           <div class="relationship-header">
             <div class="relationship-text">
               <h3><%= link_to user.full_name, dashboard_path(user) %></h3>
+              <% if user == current_user %>
+                <div class="self">ME</div>
+              <% end %>
               <div class="relationship-icons">
                 <% if user.website? %>
                   <div class="relationship-icon"><a href="<%= user.website %>"><i class="fa fa-user-circle" aria-hidden="true"></i></a></div>
@@ -22,21 +27,22 @@
                   <div class="relationship-icon"><a href="www.twitter.com/<%= user.twitter %>"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
                 <% end %>
               </div>
-
-              <div class="relationship-stat">
-                <%= link_to posts_path do %>
-                  <strong><%= user.posts.count %></strong> <%= "Post".pluralize(user.posts.count) %>
-                <% end %>
-              </div>
-              <div class="relationship-stat">
-                <%= link_to following_path(user) do %>
-                  <strong><%= user.following.count %></strong> Following
-                <% end %>
-              </div>
-              <div class="relationship-stat">
-                <%= link_to followers_path(user) do %>
-                  <strong><%= user.followers.count %></strong> <%= "Follower".pluralize(user.followers.count) %>
-                <% end %>
+              <div class="relationship-stats">
+                <div class="relationship-stat">
+                  <%= link_to posts_path do %>
+                    <strong><%= user.posts.count %></strong> <%= "Post".pluralize(user.posts.count) %>
+                  <% end %>
+                </div>
+                <div class="relationship-stat">
+                  <%= link_to following_path(user) do %>
+                    <strong><%= user.following.count %></strong> Following
+                  <% end %>
+                </div>
+                <div class="relationship-stat">
+                  <%= link_to followers_path(user) do %>
+                    <strong><%= user.followers.count %></strong> <%= "Follower".pluralize(user.followers.count) %>
+                  <% end %>
+                </div>
               </div>
             </div>
             <% if current_user.following?(user) %>
