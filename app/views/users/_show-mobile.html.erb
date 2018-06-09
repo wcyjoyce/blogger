@@ -1,0 +1,36 @@
+<div class="relationship-mobile hidden-lg hidden-md">
+  <div class="relationship-header">
+    <h3><%= link_to user.full_name, dashboard_path(user) %></h3> <!-- Name -->
+
+  </div>
+
+  <div class="relationship-icons"> <!-- External Links -->
+    <% if user.website? %>
+      <div class="relationship-icon"><a href="<%= user.website %>"><i class="fa fa-user-circle" aria-hidden="true"></i></a></div>
+    <% end %>
+    <% if user.linkedin? %>
+      <div class="relationship-icon"><a href="www.linkedin.com/in/<%= user.linkedin %>" %><i class="fa fa-linkedin" aria-hidden="true"></i></a></div>
+    <% end %>
+    <% if user.twitter? %>
+      <div class="relationship-icon"><a href="www.twitter.com/<%= user.twitter %>"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+    <% end %>
+  </div>
+
+  <div class="relationship-stats"> <!-- User Stats -->
+    <div class="relationship-stat">
+      <%= link_to posts_path do %>
+        <strong><%= user.posts.count %></strong> <%= "Post".pluralize(user.posts.count) %>
+      <% end %>
+    </div>
+    <div class="relationship-stat">
+      <%= link_to following_path(user) do %>
+        <strong><%= user.following.count %></strong> Following
+      <% end %>
+    </div>
+    <div class="relationship-stat">
+      <%= link_to followers_path(user) do %>
+        <strong><%= user.followers.count %></strong> <%= "Follower".pluralize(user.followers.count) %>
+      <% end %>
+    </div>
+  </div>
+</div>
