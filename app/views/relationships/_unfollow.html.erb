@@ -1,6 +1,8 @@
 <% unless current_user == @user %>
+  <% unless current_user.active_relationships.find_by(following_id: @user.id).nil? %>
   <%= form_for(current_user.active_relationships.find_by(following_id: @user.id),
                html: { method: :delete }) do |f| %>
     <%= f.submit "Following", class: "btn following" %>
   <% end %>
+<% end %>
 <% end %>
