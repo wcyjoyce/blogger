@@ -3,7 +3,7 @@
 <% unless user_signed_in? %>
   <div class="splash">
     <h1>NOT YOUR AVERAGE BLOG</h1>
-    <h2>Because my coding skills are too limited to create an average blog</h2>
+    <h3>Because my coding skills are too limited to create an average blog</h3>
     <div class="splash-links">
       <%= link_to "Get Started", new_user_registration_path, class: "btn-splash" %>
       <%= link_to "Log In", new_user_session_path, class: "btn-splash" %>
@@ -11,7 +11,8 @@
   </div>
 <% else %>
   <div class="splash">
-    <h1>WELCOME BACK, <%= @user.first_name %></h1>
+    <h1 class="hidden-xs hidden-sm">WELCOME BACK, <%= @user.first_name %></h1>
+    <h2 class="hidden-lg hidden-md">WELCOME BACK, <%= @user.first_name %></h2>
   </div>
 <% end %>
 
