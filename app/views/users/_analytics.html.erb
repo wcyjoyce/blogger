@@ -32,7 +32,7 @@
 <div class="analytics hidden" id="comments-analytics">
   <% if @user == current_user %>
     <% if @user.posts.empty? %>
-      <div class="placeholder-message"><%= link_to "There are no published posts yet. Would you like to write one now?", new_post_path %></div>
+      <div class="placeholder-message"><%= link_to "You have not published any posts for other people to comment on. Would you like to write one now?", new_post_path %></div>
     <% else %>
       <%= bar_chart @user.posts.group(:title).sum(:id), colors: ["gray"] %>
     <% end %>
