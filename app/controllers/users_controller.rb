@@ -13,9 +13,6 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @posts = Post.all
-    @upvotes = Upvote.all
-    @comments = Comment.all
     authorize @user
     @disable_sidebar = true
   end
