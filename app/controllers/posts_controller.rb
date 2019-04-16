@@ -3,14 +3,14 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
   def index
-    @user = current_user
+    # @user = current_user
     if params[:tag]
-      @user.posts = policy_scope(Post).tagged_with(params[:tag]).order(created_at: :desc)
+      @posts = policy_scope(Post).tagged_with(params[:tag]).order(created_at: :desc)
       @title = params[:tag]
     elsif params[:search].present?
-      @user.posts = policy_scope(Post).order(created_at: :desc).global_search(params[:search])
+      @posts = policy_scope(Post).order(created_at: :desc).global_search(params[:search])
     else
-      @user.posts = policy_scope(Post).order(created_at: :desc)
+      @posts = policy_scope(Post).order(created_at: :desc)
     end
   end
 

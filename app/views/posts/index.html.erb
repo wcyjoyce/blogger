@@ -1,5 +1,5 @@
 <div class="posts">
-  <% if @user.posts.empty? %>
+  <% if @posts.empty? %>
     <div class="post">
       <% if policy(post).edit? %>
         <h3><%= link_to "There are no published posts yet. Would you like to write one now?", new_post_path %></h3>
@@ -11,10 +11,10 @@
     <% if params[:tag] %>
       <h1>All Posts Tagged With "<%= @title %>"</h1>
     <% end %>
-    <% @user.posts.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="post">
         <h3><%= link_to post.title, post_path(post) %></h3>
-        <h6><strong><%= link_to post.user.full_name, dashboard_path(@user) %></strong> - <%= post.time %></h6>
+        <h6><strong><%= link_to post.user.full_name, dashboard_path(post.user) %></strong> - <%= post.time %></h6>
         <p><%= post.content %></p>
         <div class="post-tags">
           <%= raw tag_links(post.all_tags) %>
@@ -52,4 +52,4 @@
   <% end %>
 </div>
 
-<%= content_for(:title, "Posts by " + @user.full_name) %>
+<%= content_for(:title, "Posts by " + @posts.first.user.full_name) %>
